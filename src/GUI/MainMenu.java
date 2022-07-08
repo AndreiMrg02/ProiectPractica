@@ -54,12 +54,12 @@ public class MainMenu extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private final JPanel panelLeft = new JPanel();
+	private final JPanel panelLeft;
 	static JFrame frame = null;
 	private int mouseX, mouseY;
 	private Employee employee_list;
 	
-	private Connection conn = MyConnection.getInstance().getConnection();
+	private Connection conn = null;
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
 	
@@ -83,6 +83,8 @@ public class MainMenu extends JFrame {
 	private JTextField srNoDeleteField;
 	private JTextField departamentDeleteField;
 	private JTextField designationDeleteField;
+	private JComboBox<String> departamentBox;
+	private JComboBox<String> gradeBox;
 	
 	/**
 	 * Launch the application.
@@ -105,7 +107,16 @@ public class MainMenu extends JFrame {
 	 * Create the frame.
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	public MainMenu() {
+	
+	
+	public MainMenu()
+	{
+		panelLeft = new JPanel();
+		conn = MyConnection.getInstance().getConnection();
+		employee_list =  new Employee();
+		initializare();
+	}
+	public void initializare() {
 		
 		
 		frame =  new JFrame();
@@ -168,18 +179,22 @@ public class MainMenu extends JFrame {
 		lnField.setBounds(420, 216, 261, 30);
 		addPanel.add(lnField);
 		
-		JComboBox gradeBox = new JComboBox();
-		gradeBox.setModel(new DefaultComboBoxModel(new String[] {"Select Designation"}));
+		gradeBox = new JComboBox<String>();
+		gradeBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Select Designation"}));
 		gradeBox.setBounds(420, 292, 261, 30);
 		addPanel.add(gradeBox);
 		
-		JComboBox departamentBox = new JComboBox();
-		
-		departamentBox.setModel(new DefaultComboBoxModel(new String[] {"Select departament", "Departament1", "Departament2", "Departament3", "Departament4"}));
+		departamentBox = new JComboBox<String>();
+		departamentBox.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				employee_list.selectDesignation(departamentBox, gradeBox);
+			}
+		});
+		departamentBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Select departament", "Departament1", "Departament2", "Departament3", "Departament4"}));
 		departamentBox.setBounds(138, 292, 251, 30);
 		addPanel.add(departamentBox);
-		selectDesignation(departamentBox, gradeBox);
 		
+	
 		
 		contactField = new JTextField();
 		contactField.setSelectedTextColor(Color.WHITE);
@@ -280,6 +295,12 @@ public class MainMenu extends JFrame {
 		addPanel.add(txtpnAddEmployeeMenu);
 		
 		ButtonGradient addBttnPanel = new ButtonGradient();
+		addBttnPanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				employee_list.addEmployee(fnField, lnField, contactField, addressField, basicSalaryField, departamentBox, gradeBox);
+			}
+		});
 		addBttnPanel.setText("Add Employee");
 		addBttnPanel.setSizeSpeed(5.0f);
 		addBttnPanel.setForeground(Color.WHITE);
@@ -708,7 +729,7 @@ public class MainMenu extends JFrame {
 		profileBttn.setBounds(55, 178, 115, 33);
 		panelLeft.add(profileBttn);
 		
-		connectionRealise(addBttnPanel, fnField,  lnField,  addressField, contactField,  basicSalaryField,  departamentBox, gradeBox);
+		
 		
 	
 		
@@ -831,6 +852,7 @@ public class MainMenu extends JFrame {
 						
 						JOptionPane.showMessageDialog(null, "Data deleted from database succesfully!");
 						srNoDeleteField.setText("                                                                Enter Employee ID to search");
+						
 						lnDeleteField.setText("");
 						fnDeleteField.setText("");
 						departamentDeleteField.setText("");
@@ -869,7 +891,7 @@ public class MainMenu extends JFrame {
 						String sql = "select * from employee_list where srno = ?";
 						
 						ps = conn.prepareStatement(sql);
-						ps.setString(1, srNoUpdateField.getText());
+						ps.setString(1, srNoDeleteField.getText());
 						rs = ps.executeQuery();
 						
 						if(rs.next() )
@@ -952,80 +974,10 @@ public class MainMenu extends JFrame {
 		
 
 	}
+
 	void reset()
 	{
 		
-	}
-	@SuppressWarnings("rawtypes")
-	private void connectionRealise(JButton button, JTextField fn, JTextField ln, JTextField addres, JTextField contact, JTextField salaryField, JComboBox departament, JComboBox designation)
-	{
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { // Add employer button
-				
-			int p = JOptionPane.showConfirmDialog(null, "Are you sure to add this record?","Add Record", JOptionPane.YES_NO_OPTION);
-			
-			if(p == 0)
-			{
-				String sql = "INSERT INTO `employee_list`(`fname`, `lname`, `departament`, `designation`, `number`, `address`, `salary`) VALUES (?,?,?,?,?,?,?)";
-				
-				String firstname = fn.getText();
-				String lastname = ln.getText();
-				String number = contact.getText();
-				String address = addres.getText();
-				String salary = salaryField.getText();
-				
-				if(firstname.equalsIgnoreCase("")) { // verificam daca caseta cu username este goala	
-					JOptionPane.showMessageDialog(null, "ERROR: First Name filed is empty");
-				} else if(lastname.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "ERROR: Last Name filed is empty");
-				} else if(number.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "ERROR: Number filed is empty");
-				}else if(address.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "ERROR: Address filed is empty");
-				}else if(salary.equals(""))
-				{
-					JOptionPane.showMessageDialog(null, "ERROR: Salary filed is empty");
-				}else if(departament.getSelectedItem().equals("Select departament"))
-				{
-					JOptionPane.showMessageDialog(null, "ERROR: Select departament");
-				}
-				else {
-				
-				try {
-					ps = conn.prepareStatement(sql);
-					
-					ps.setString(1, fn.getText());
-					ps.setString(2, ln.getText());
-					ps.setString(3, departament.getSelectedItem().toString());
-					ps.setString(4, designation.getSelectedItem().toString());
-					ps.setString(5, contact.getText());
-					ps.setString(6, addres.getText());
-					ps.setString(7, salaryField.getText());
-					
-					ps.execute();
-					JOptionPane.showMessageDialog(null, "Data stored successfully");
-					 reset_Update();
-				} 
-				catch (Exception ex) {
-					// TODO Auto-generated catch block
-					JOptionPane.showMessageDialog(null, ex);
-					 
-				}
-				
-			  }
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null,"Error! Check the information again !");		
-				
-			}
-		
-			  }	
-			
-		});
 	}
 	
 	private void reset_Update()
@@ -1048,75 +1000,6 @@ public class MainMenu extends JFrame {
 		invisiblePanel4.setVisible(false);
 	}
 	
-	@SuppressWarnings("rawtypes")
-	private void selectDesignation(JComboBox departament, JComboBox designation)
-	{
-		
-		departament.addItemListener(new ItemListener() {
-			@SuppressWarnings("unchecked")
-			public void itemStateChanged(ItemEvent e) {
-				ArrayList<String> array = new ArrayList<>();
-				Iterator<String> iterator;
-				if(departament.getSelectedItem().equals("Departament1"))
-				{
-					designation.removeAllItems();
-					array.add("a");
-					array.add("b");
-					array.add("c");
-					array.add("d");
-					iterator = array.iterator();
-					
-					while(iterator.hasNext())
-					{
-						designation.addItem(iterator.next());
-					}
-				}else if(departament.getSelectedItem().equals("Departament2"))
-				{
-					designation.removeAllItems();
-					array.add("e");
-					array.add("f");
-					array.add("g");
-					array.add("h");
-					iterator = array.iterator();
-					
-					while(iterator.hasNext())
-					{
-						designation.addItem(iterator.next());
-					}
-				}else if(departament.getSelectedItem().equals("Departament3"))
-				{
-					designation.removeAllItems();
-					array.add("i");
-					array.add("j");
-					array.add("k");
-					array.add("l");
-					iterator = array.iterator();
-					
-					while(iterator.hasNext())
-					{
-						designation.addItem(iterator.next());
-					}
-				}else if(departament.getSelectedItem().equals("Departament4"))
-				{
-					designation.removeAllItems();
-					array.add("m");
-					array.add("n");
-					array.add("o");
-					array.add("p");
-					iterator = array.iterator();
-					
-					while(iterator.hasNext())
-					{
-						designation.addItem(iterator.next());
-					}
-				}else if(departament.getSelectedItem().equals("Select departament"))
-				{
-					designation.removeAllItems();
-				}
-			}
-		});
-		
-	}
 	private void move_windows(JPanel panelHeader) {
 		panelHeader.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
