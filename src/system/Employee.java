@@ -126,14 +126,30 @@ public class Employee {
 	
 	}
 	
+	public void updateEmployeeSalary(JTextField srNoUpdateField, JTextField grossSalary)
+	{
+		srNo = srNoUpdateField.getText();
+		String gross =  grossSalary.getText();
+		String sql = "UPDATE `employee_list` SET `srno`='"+srNo+"',`salary`='"+gross+"' WHERE `srno`='"+srNo+"'";
+			try {
+				ps = conn.prepareStatement(sql);
+				ps.execute();
+			} catch (Exception ex) {
+				
+				JOptionPane.showMessageDialog(null, ex);
+			}
+		
+	
+	}
+	
+	
 	public void deleteEmployee(JTextField srNoDeleteField, JTextField fnDeleteField, JTextField lnDeleteField, JTextField departamentDeleteField, JTextField designationDeleteField, JTextField contactDeleteField, JTextField addressDeleteField )
 	{
 		int p = JOptionPane.showConfirmDialog(null, "Are you sure to delete this record?", "Delete Record", JOptionPane.YES_NO_OPTION);
-		
+		try {
 		if(p == 0)
 		{
 			String sql = "delete from employee_list where srno = ?";
-			try {
 				ps = conn.prepareStatement(sql);
 				ps.setString(1, srNoDeleteField.getText());
 				ps.execute();
@@ -148,12 +164,11 @@ public class Employee {
 				designationDeleteField.setText("");
 				contactDeleteField.setText("");
 				addressDeleteField.setText("");
+			}
 			} catch (Exception ex) {
 				
 				JOptionPane.showMessageDialog(null, ex);
 			}
-		}
-		
 	}
 	public void selectDesignation(JComboBox<String> departament_b, JComboBox<String> designation_b)
 	{

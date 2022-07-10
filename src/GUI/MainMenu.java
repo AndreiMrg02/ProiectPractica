@@ -102,6 +102,20 @@ public class MainMenu extends JFrame {
 	private JTextField incomeTaxField;
 	private JTextField empNameField;
 	private JTextField desField;
+	private JTextField fnUpdateSalary;
+	private JTextField lnUpdateSalary;
+	private JTextField departamentUpdateSalary;
+	private JTextField grossSalaryUpdateSalary;
+	private JTextField overtimeUpdateSalary;
+	private JTextField socialInsuranceUpdateSalary;
+	private JTextField healthInsuranceUpdateSalary;
+	private JTextField peopleUpdateSalary;
+	private JTextField personalDeductionUpdateSalary;
+	private JTextField netSalaryUpdateSalary;
+	private JTextField overtimeHourUpdateSalary;
+	private JTextField overtimeTotalUpdateSalary;
+	private JTextField incomeUpdateSalary;
+	private JTextField srNoUpdateSalary;
 	
 	/**
 	 * Launch the application.
@@ -181,7 +195,7 @@ public class MainMenu extends JFrame {
 		Panels.add(addPanel, "name_21359803485800");
 		
 		srNoField = new JTextField();
-		srNoField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		srNoField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		srNoField.setForeground(Color.BLACK);
 		srNoField.setText("                                                              This will be generated automatically");
 		srNoField.setSelectedTextColor(Color.WHITE);
@@ -194,7 +208,7 @@ public class MainMenu extends JFrame {
 		
 		fnField = new JTextField();
 		fnField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		fnField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		fnField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		fnField.setForeground(Color.BLACK);
 		fnField.setSelectedTextColor(Color.WHITE);
 		fnField.setOpaque(false);
@@ -205,7 +219,7 @@ public class MainMenu extends JFrame {
 		
 		lnField = new JTextField();
 		lnField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		lnField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lnField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		lnField.setForeground(Color.BLACK);
 		lnField.setSelectedTextColor(Color.WHITE);
 		lnField.setOpaque(false);
@@ -215,14 +229,14 @@ public class MainMenu extends JFrame {
 		addPanel.add(lnField);
 		
 		gradeBox = new JComboBox<String>();
-		gradeBox.setFont(new Font("Tahoma", Font.BOLD, 11));
+		gradeBox.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		gradeBox.setForeground(Color.BLACK);
 		gradeBox.setModel(new DefaultComboBoxModel<String>(new String[] {"Select Designation"}));
 		gradeBox.setBounds(420, 292, 261, 30);
 		addPanel.add(gradeBox);
 		
 		departamentBox = new JComboBox<String>();
-		departamentBox.setFont(new Font("Tahoma", Font.BOLD, 11));
+		departamentBox.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		departamentBox.setForeground(Color.BLACK);
 		departamentBox.addItemListener(new ItemListener() {
 			public void itemStateChanged(ItemEvent e) {
@@ -235,7 +249,7 @@ public class MainMenu extends JFrame {
 		
 		contactField = new JTextField();
 		contactField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		contactField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		contactField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		contactField.setForeground(Color.BLACK);
 		contactField.setSelectedTextColor(Color.WHITE);
 		contactField.setOpaque(false);
@@ -246,7 +260,7 @@ public class MainMenu extends JFrame {
 		
 		addressField = new JTextField();
 		addressField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		addressField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		addressField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		addressField.setForeground(Color.BLACK);
 		addressField.setSelectedTextColor(Color.WHITE);
 		addressField.setOpaque(false);
@@ -257,7 +271,7 @@ public class MainMenu extends JFrame {
 		
 		basicSalaryField = new JTextField();
 		basicSalaryField.setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));
-		basicSalaryField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		basicSalaryField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		basicSalaryField.setForeground(Color.BLACK);
 		basicSalaryField.setSelectedTextColor(Color.WHITE);
 		basicSalaryField.setOpaque(false);
@@ -596,6 +610,9 @@ public class MainMenu extends JFrame {
 		Panels.add(generatePanel, "name_21390220791400");
 		
 
+		GradientPanel updateSalaryPanel = new GradientPanel();
+		updateSalaryPanel.setLayout(null);
+		Panels.add(updateSalaryPanel, "name_15035986967600");
 		
 		JTextPane txtpnSrNo_1_2 = new JTextPane();
 		txtpnSrNo_1_2.setForeground(Color.BLACK);
@@ -604,7 +621,7 @@ public class MainMenu extends JFrame {
 		txtpnSrNo_1_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		txtpnSrNo_1_2.setEditable(false);
 		txtpnSrNo_1_2.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2.setBounds(102, 99, 67, 20);
+		txtpnSrNo_1_2.setBounds(101, 104, 67, 20);
 		generatePanel.add(txtpnSrNo_1_2);
 		
 		fnGenerateSalaryField = new JTextField();
@@ -688,7 +705,7 @@ public class MainMenu extends JFrame {
 		generatePanel.add(txtpnSrNo_1_2_1_2_1);
 		
 		overTimeField = new JTextField();
-		overTimeField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		overTimeField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		overTimeField.setForeground(Color.BLACK);
 		overTimeField.setDisabledTextColor(Color.WHITE);
 		overTimeField.setBackground(Color.ORANGE);
@@ -720,7 +737,7 @@ public class MainMenu extends JFrame {
 		
 		socialInsuranceField = new JTextField();
 		socialInsuranceField.setForeground(Color.BLACK);
-		socialInsuranceField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		socialInsuranceField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		socialInsuranceField.setSelectedTextColor(Color.WHITE);
 		socialInsuranceField.setOpaque(false);
 		socialInsuranceField.setEditable(false);
@@ -751,7 +768,7 @@ public class MainMenu extends JFrame {
 		
 		healthInsuranceField = new JTextField();
 		healthInsuranceField.setForeground(Color.BLACK);
-		healthInsuranceField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		healthInsuranceField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		healthInsuranceField.setEditable(false);
 		healthInsuranceField.setSelectedTextColor(Color.WHITE);
 		healthInsuranceField.setOpaque(false);
@@ -775,7 +792,7 @@ public class MainMenu extends JFrame {
 		peopleField.setDisabledTextColor(Color.ORANGE);
 		peopleField.setCaretColor(Color.RED);
 		peopleField.setForeground(Color.BLACK);
-		peopleField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		peopleField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		peopleField.setSelectedTextColor(Color.WHITE);
 		peopleField.setOpaque(false);
 		peopleField.setEditable(true);
@@ -796,7 +813,7 @@ public class MainMenu extends JFrame {
 		
 		personalDeductionField = new JTextField();
 		personalDeductionField.setForeground(Color.BLACK);
-		personalDeductionField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		personalDeductionField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		personalDeductionField.setSelectedTextColor(Color.WHITE);
 		personalDeductionField.setOpaque(false);
 		personalDeductionField.setEditable(false);
@@ -817,7 +834,7 @@ public class MainMenu extends JFrame {
 		
 		netSalaryField = new JTextField();
 		netSalaryField.setForeground(Color.BLACK);
-		netSalaryField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		netSalaryField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		netSalaryField.setEditable(false);
 		netSalaryField.setSelectedTextColor(Color.WHITE);
 		netSalaryField.setOpaque(false);
@@ -860,7 +877,7 @@ public class MainMenu extends JFrame {
 		overTimeHourField.setSelectedTextColor(Color.WHITE);
 		overTimeHourField.setOpaque(false);
 		overTimeHourField.setForeground(Color.BLACK);
-		overTimeHourField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		overTimeHourField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		overTimeHourField.setColumns(10);
 		overTimeHourField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		overTimeHourField.setBounds(569, 302, 172, 30);
@@ -880,7 +897,7 @@ public class MainMenu extends JFrame {
 		totalMoneyOvertime.setSelectedTextColor(Color.WHITE);
 		totalMoneyOvertime.setOpaque(false);
 		totalMoneyOvertime.setForeground(Color.BLACK);
-		totalMoneyOvertime.setFont(new Font("Tahoma", Font.BOLD, 11));
+		totalMoneyOvertime.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		totalMoneyOvertime.setEditable(false);
 		totalMoneyOvertime.setColumns(10);
 		totalMoneyOvertime.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -901,7 +918,7 @@ public class MainMenu extends JFrame {
 		incomeTaxField.setSelectedTextColor(Color.WHITE);
 		incomeTaxField.setOpaque(false);
 		incomeTaxField.setForeground(Color.BLACK);
-		incomeTaxField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		incomeTaxField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		incomeTaxField.setEditable(false);
 		incomeTaxField.setColumns(10);
 		incomeTaxField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
@@ -917,12 +934,6 @@ public class MainMenu extends JFrame {
 		txtpnIncomeTax.setCaretColor(Color.CYAN);
 		txtpnIncomeTax.setBounds(569, 413, 172, 20);
 		generatePanel.add(txtpnIncomeTax);
-		
-		
-		
-		GradientPanel updateSalaryPanel = new GradientPanel();
-		updateSalaryPanel.setLayout(null);
-		Panels.add(updateSalaryPanel, "name_21420245280400");
 		
 		GradientPanel deletePanel = new GradientPanel();
 		deletePanel.setLayout(null);
@@ -1131,7 +1142,7 @@ public class MainMenu extends JFrame {
 	
 		
 		fnDeleteField = new JTextField();
-		fnDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		fnDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		fnDeleteField.setForeground(Color.BLACK);
 		fnDeleteField.setEditable(false);
 		fnDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1142,7 +1153,7 @@ public class MainMenu extends JFrame {
 		deletePanel.add(fnDeleteField);
 		
 		lnDeleteField = new JTextField();
-		lnDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lnDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		lnDeleteField.setForeground(Color.BLACK);
 		lnDeleteField.setEditable(false);
 		lnDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1153,7 +1164,7 @@ public class MainMenu extends JFrame {
 		deletePanel.add(lnDeleteField);
 		
 		contactDeleteField = new JTextField();
-		contactDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		contactDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		contactDeleteField.setForeground(Color.BLACK);
 		contactDeleteField.setEditable(false);
 		contactDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1164,7 +1175,7 @@ public class MainMenu extends JFrame {
 		deletePanel.add(contactDeleteField);
 		
 		addressDeleteField = new JTextField();
-		addressDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		addressDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		addressDeleteField.setForeground(Color.BLACK);
 		addressDeleteField.setEditable(false);
 		addressDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1267,7 +1278,7 @@ public class MainMenu extends JFrame {
 		
 		
 		srNoDeleteField = new JTextField();
-		srNoDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		srNoDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		srNoDeleteField.setForeground(Color.BLACK);
 		srNoDeleteField.addKeyListener(new KeyAdapter() {
 			@Override
@@ -1314,7 +1325,7 @@ public class MainMenu extends JFrame {
 		deletePanel.add(srNoDeleteField);
 		
 		departamentDeleteField = new JTextField();
-		departamentDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		departamentDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		departamentDeleteField.setForeground(Color.BLACK);
 		departamentDeleteField.setEditable(false);
 		departamentDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1325,7 +1336,7 @@ public class MainMenu extends JFrame {
 		deletePanel.add(departamentDeleteField);
 		
 		designationDeleteField = new JTextField();
-		designationDeleteField.setFont(new Font("Tahoma", Font.BOLD, 11));
+		designationDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
 		designationDeleteField.setForeground(Color.BLACK);
 		designationDeleteField.setEditable(false);
 		designationDeleteField.setSelectedTextColor(Color.WHITE);
@@ -1368,50 +1379,11 @@ public class MainMenu extends JFrame {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				
-				
 				if(e.getKeyCode() == KeyEvent.VK_ENTER)
-				{
+				{	
 					
-					try {
-						String sql = "select * from employee_list where srno = ?";
-						
-						String srNo =  srNoGenerateSalary.getText();
+					salary_employee.completeWithEnter(srNoGenerateSalary, fnGenerateSalaryField, lnGenerateSalaryField, departamentGenerateSalaryField, basicSalaryGenerateSalaryField, srNoField, employee_list);
 				
-						if( employee_list.verifySrNo( srNo,  srNoField) ==  true)
-						{
-							srNoGenerateSalary.setText("");
-							fnGenerateSalaryField.setText("");
-							lnGenerateSalaryField.setText("");
-							departamentGenerateSalaryField.setText("");
-							basicSalaryGenerateSalaryField.setText("");
-						JOptionPane.showMessageDialog(null, "Employee dosen't exist!");
-						
-								
-					    }
-					else {
-						ps = conn.prepareStatement(sql);
-						ps.setString(1, srNoGenerateSalary.getText());
-						rs = ps.executeQuery();
-					
-						if(rs.next() )
-							
-						{
-					
-							fnGenerateSalaryField.setText(rs.getString(2));
-							lnGenerateSalaryField.setText(rs.getString(3));
-							departamentGenerateSalaryField.setText(rs.getString(4));
-							basicSalaryGenerateSalaryField.setText(rs.getString(8));
-				
-						}
-							
-						}
-						
-						
-					} catch (Exception ex) {
-						
-						JOptionPane.showMessageDialog(null, ex);
-						
-					}
 				}
 				
 				
@@ -1425,7 +1397,7 @@ public class MainMenu extends JFrame {
 				if(srNoGenerateSalary.getText().trim().equals("Enter Employee ID to search"))
 				{
 					srNoGenerateSalary.setText("");
-				}
+				} 
 				srNoGenerateSalary.setForeground(Color.black);
 			}
 			@Override
@@ -1479,6 +1451,404 @@ public class MainMenu extends JFrame {
 		txtpnAddEmployeeMenu_1_2.setDisabledTextColor(Color.BLACK);
 		txtpnAddEmployeeMenu_1_2.setBounds(299, 23, 214, 44);
 		generatePanel.add(txtpnAddEmployeeMenu_1_2);
+		
+		
+		
+		JTextPane srNoTxtUpdateSalary = new JTextPane();
+		srNoTxtUpdateSalary.setText("Sr No:\r\n");
+		srNoTxtUpdateSalary.setOpaque(false);
+		srNoTxtUpdateSalary.setForeground(Color.BLACK);
+		srNoTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		srNoTxtUpdateSalary.setEditable(false);
+		srNoTxtUpdateSalary.setCaretColor(Color.CYAN);
+		srNoTxtUpdateSalary.setBounds(101, 105, 67, 20);
+		updateSalaryPanel.add(srNoTxtUpdateSalary);
+		
+		fnUpdateSalary = new JTextField();
+		fnUpdateSalary.setSelectedTextColor(Color.WHITE);
+		fnUpdateSalary.setOpaque(false);
+		fnUpdateSalary.setForeground(Color.BLACK);
+		fnUpdateSalary.setEditable(false);
+		fnUpdateSalary.setColumns(10);
+		fnUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		fnUpdateSalary.setBounds(39, 243, 166, 30);
+		updateSalaryPanel.add(fnUpdateSalary);
+		
+		JTextPane fnTxtUpdateSalary = new JTextPane();
+		fnTxtUpdateSalary.setText("First name");
+		fnTxtUpdateSalary.setOpaque(false);
+		fnTxtUpdateSalary.setForeground(Color.BLACK);
+		fnTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		fnTxtUpdateSalary.setEditable(false);
+		fnTxtUpdateSalary.setCaretColor(Color.CYAN);
+		fnTxtUpdateSalary.setBounds(39, 224, 67, 20);
+		updateSalaryPanel.add(fnTxtUpdateSalary);
+		
+		lnUpdateSalary = new JTextField();
+		lnUpdateSalary.setSelectedTextColor(Color.WHITE);
+		lnUpdateSalary.setOpaque(false);
+		lnUpdateSalary.setForeground(Color.BLACK);
+		lnUpdateSalary.setEditable(false);
+		lnUpdateSalary.setColumns(10);
+		lnUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		lnUpdateSalary.setBounds(39, 302, 166, 30);
+		updateSalaryPanel.add(lnUpdateSalary);
+		
+		JTextPane lnTxtUpdateSalary = new JTextPane();
+		lnTxtUpdateSalary.setText("Last name");
+		lnTxtUpdateSalary.setOpaque(false);
+		lnTxtUpdateSalary.setForeground(Color.BLACK);
+		lnTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		lnTxtUpdateSalary.setEditable(false);
+		lnTxtUpdateSalary.setCaretColor(Color.CYAN);
+		lnTxtUpdateSalary.setBounds(39, 283, 67, 20);
+		updateSalaryPanel.add(lnTxtUpdateSalary);
+		
+		departamentUpdateSalary = new JTextField();
+		departamentUpdateSalary.setSelectedTextColor(Color.WHITE);
+		departamentUpdateSalary.setOpaque(false);
+		departamentUpdateSalary.setForeground(Color.BLACK);
+		departamentUpdateSalary.setEditable(false);
+		departamentUpdateSalary.setColumns(10);
+		departamentUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		departamentUpdateSalary.setBounds(39, 368, 166, 30);
+		updateSalaryPanel.add(departamentUpdateSalary);
+		
+		JTextPane departamentTxtUpdateSalary = new JTextPane();
+		departamentTxtUpdateSalary.setText("Departament");
+		departamentTxtUpdateSalary.setOpaque(false);
+		departamentTxtUpdateSalary.setForeground(Color.BLACK);
+		departamentTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		departamentTxtUpdateSalary.setEditable(false);
+		departamentTxtUpdateSalary.setCaretColor(Color.CYAN);
+		departamentTxtUpdateSalary.setBounds(39, 349, 82, 20);
+		updateSalaryPanel.add(departamentTxtUpdateSalary);
+		
+		grossSalaryUpdateSalary = new JTextField();
+		grossSalaryUpdateSalary.setBackground(Color.ORANGE);
+		grossSalaryUpdateSalary.setSelectedTextColor(Color.WHITE);
+		grossSalaryUpdateSalary.setOpaque(false);
+		grossSalaryUpdateSalary.setForeground(Color.BLACK);
+		grossSalaryUpdateSalary.setColumns(10);
+		grossSalaryUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		grossSalaryUpdateSalary.setBounds(39, 432, 166, 30);
+		updateSalaryPanel.add(grossSalaryUpdateSalary);
+		
+		JTextPane grossSalaryTxtUpdateSalary = new JTextPane();
+		grossSalaryTxtUpdateSalary.setText("Gross Salary(Lei)");
+		grossSalaryTxtUpdateSalary.setOpaque(false);
+		grossSalaryTxtUpdateSalary.setForeground(Color.BLACK);
+		grossSalaryTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		grossSalaryTxtUpdateSalary.setEditable(false);
+		grossSalaryTxtUpdateSalary.setCaretColor(Color.CYAN);
+		grossSalaryTxtUpdateSalary.setBounds(39, 413, 103, 20);
+		updateSalaryPanel.add(grossSalaryTxtUpdateSalary);
+		
+		overtimeUpdateSalary = new JTextField();
+		overtimeUpdateSalary.setSelectedTextColor(Color.WHITE);
+		overtimeUpdateSalary.setOpaque(false);
+		overtimeUpdateSalary.setForeground(Color.BLACK);
+		overtimeUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		overtimeUpdateSalary.setEditable(true);
+		overtimeUpdateSalary.setDisabledTextColor(Color.WHITE);
+		overtimeUpdateSalary.setColumns(10);
+		overtimeUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		overtimeUpdateSalary.setBackground(Color.ORANGE);
+		overtimeUpdateSalary.setBounds(569, 243, 172, 30);
+		updateSalaryPanel.add(overtimeUpdateSalary);
+		
+		JTextPane txtpnEmployeeInformation_1 = new JTextPane();
+		txtpnEmployeeInformation_1.setText("Employee information");
+		txtpnEmployeeInformation_1.setOpaque(false);
+		txtpnEmployeeInformation_1.setForeground(new Color(0, 0, 102));
+		txtpnEmployeeInformation_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		txtpnEmployeeInformation_1.setEditable(false);
+		txtpnEmployeeInformation_1.setBounds(39, 190, 180, 23);
+		updateSalaryPanel.add(txtpnEmployeeInformation_1);
+		
+		JTextPane txtpnIntroduceData_1 = new JTextPane();
+		txtpnIntroduceData_1.setText("Enter the data");
+		txtpnIntroduceData_1.setOpaque(false);
+		txtpnIntroduceData_1.setForeground(new Color(0, 0, 102));
+		txtpnIntroduceData_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		txtpnIntroduceData_1.setEditable(false);
+		txtpnIntroduceData_1.setBounds(500, 183, 114, 30);
+		updateSalaryPanel.add(txtpnIntroduceData_1);
+		
+		socialInsuranceUpdateSalary = new JTextField();
+		socialInsuranceUpdateSalary.setSelectedTextColor(Color.WHITE);
+		socialInsuranceUpdateSalary.setOpaque(false);
+		socialInsuranceUpdateSalary.setForeground(Color.BLACK);
+		socialInsuranceUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		socialInsuranceUpdateSalary.setEditable(false);
+		socialInsuranceUpdateSalary.setColumns(10);
+		socialInsuranceUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		socialInsuranceUpdateSalary.setBounds(364, 432, 172, 30);
+		updateSalaryPanel.add(socialInsuranceUpdateSalary);
+		
+		JTextPane overtimeTxtUpdateSalary = new JTextPane();
+		overtimeTxtUpdateSalary.setText("Overtime(Lei)*:\r\n");
+		overtimeTxtUpdateSalary.setOpaque(false);
+		overtimeTxtUpdateSalary.setForeground(Color.BLACK);
+		overtimeTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		overtimeTxtUpdateSalary.setEditable(false);
+		overtimeTxtUpdateSalary.setCaretColor(Color.CYAN);
+		overtimeTxtUpdateSalary.setBounds(569, 224, 172, 20);
+		updateSalaryPanel.add(overtimeTxtUpdateSalary);
+		
+		JTextPane siTxtUpdateSalary = new JTextPane();
+		siTxtUpdateSalary.setText("Social Insurance(25%)\r\n");
+		siTxtUpdateSalary.setOpaque(false);
+		siTxtUpdateSalary.setForeground(Color.BLACK);
+		siTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		siTxtUpdateSalary.setEditable(false);
+		siTxtUpdateSalary.setCaretColor(Color.CYAN);
+		siTxtUpdateSalary.setBounds(364, 413, 172, 20);
+		updateSalaryPanel.add(siTxtUpdateSalary);
+		
+		healthInsuranceUpdateSalary = new JTextField();
+		healthInsuranceUpdateSalary.setSelectedTextColor(Color.WHITE);
+		healthInsuranceUpdateSalary.setOpaque(false);
+		healthInsuranceUpdateSalary.setForeground(Color.BLACK);
+		healthInsuranceUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		healthInsuranceUpdateSalary.setEditable(false);
+		healthInsuranceUpdateSalary.setColumns(10);
+		healthInsuranceUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		healthInsuranceUpdateSalary.setBounds(364, 368, 172, 30);
+		updateSalaryPanel.add(healthInsuranceUpdateSalary);
+		
+		JTextPane hiTxtUpdateSalary = new JTextPane();
+		hiTxtUpdateSalary.setText("Health Insurance(10%)");
+		hiTxtUpdateSalary.setOpaque(false);
+		hiTxtUpdateSalary.setForeground(Color.BLACK);
+		hiTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		hiTxtUpdateSalary.setEditable(false);
+		hiTxtUpdateSalary.setCaretColor(Color.CYAN);
+		hiTxtUpdateSalary.setBounds(364, 349, 172, 20);
+		updateSalaryPanel.add(hiTxtUpdateSalary);
+		
+		peopleUpdateSalary = new JTextField();
+		peopleUpdateSalary.setSelectedTextColor(Color.WHITE);
+		peopleUpdateSalary.setOpaque(false);
+		peopleUpdateSalary.setForeground(Color.BLACK);
+		peopleUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		peopleUpdateSalary.setEditable(true);
+		peopleUpdateSalary.setDisabledTextColor(Color.ORANGE);
+		peopleUpdateSalary.setColumns(10);
+		peopleUpdateSalary.setCaretColor(Color.RED);
+		peopleUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		peopleUpdateSalary.setBackground(Color.ORANGE);
+		peopleUpdateSalary.setBounds(364, 243, 172, 30);
+		updateSalaryPanel.add(peopleUpdateSalary);
+		
+		JTextPane peopleTxtUpdateSalary = new JTextPane();
+		peopleTxtUpdateSalary.setText("People for deduction\r\n*");
+		peopleTxtUpdateSalary.setOpaque(false);
+		peopleTxtUpdateSalary.setForeground(Color.BLACK);
+		peopleTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		peopleTxtUpdateSalary.setEditable(false);
+		peopleTxtUpdateSalary.setCaretColor(Color.CYAN);
+		peopleTxtUpdateSalary.setBounds(364, 224, 132, 20);
+		updateSalaryPanel.add(peopleTxtUpdateSalary);
+		
+		personalDeductionUpdateSalary = new JTextField();
+		personalDeductionUpdateSalary.setSelectedTextColor(Color.WHITE);
+		personalDeductionUpdateSalary.setOpaque(false);
+		personalDeductionUpdateSalary.setForeground(Color.BLACK);
+		personalDeductionUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		personalDeductionUpdateSalary.setEditable(false);
+		personalDeductionUpdateSalary.setColumns(10);
+		personalDeductionUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		personalDeductionUpdateSalary.setBounds(364, 302, 172, 30);
+		updateSalaryPanel.add(personalDeductionUpdateSalary);
+		
+		JTextPane dpTxtUpdateSalary = new JTextPane();
+		dpTxtUpdateSalary.setText("Personal Deduction");
+		dpTxtUpdateSalary.setOpaque(false);
+		dpTxtUpdateSalary.setForeground(Color.BLACK);
+		dpTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		dpTxtUpdateSalary.setEditable(false);
+		dpTxtUpdateSalary.setCaretColor(Color.CYAN);
+		dpTxtUpdateSalary.setBounds(368, 283, 172, 20);
+		updateSalaryPanel.add(dpTxtUpdateSalary);
+		
+		netSalaryUpdateSalary = new JTextField();
+		netSalaryUpdateSalary.setSelectedTextColor(Color.WHITE);
+		netSalaryUpdateSalary.setOpaque(false);
+		netSalaryUpdateSalary.setForeground(Color.BLACK);
+		netSalaryUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		netSalaryUpdateSalary.setEditable(false);
+		netSalaryUpdateSalary.setColumns(10);
+		netSalaryUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		netSalaryUpdateSalary.setBounds(364, 492, 377, 30);
+		updateSalaryPanel.add(netSalaryUpdateSalary);
+		
+		JTextPane netTxtUpdateSalary = new JTextPane();
+		netTxtUpdateSalary.setText("Net salary(Lei):\r\n");
+		netTxtUpdateSalary.setOpaque(false);
+		netTxtUpdateSalary.setForeground(Color.BLACK);
+		netTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		netTxtUpdateSalary.setEditable(false);
+		netTxtUpdateSalary.setCaretColor(Color.CYAN);
+		netTxtUpdateSalary.setBounds(364, 473, 377, 20);
+		updateSalaryPanel.add(netTxtUpdateSalary);
+		
+		ButtonGradient generateSalaryBttn_1 = new ButtonGradient();
+		generateSalaryBttn_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				salary_employee.calculateSalary(grossSalaryUpdateSalary, socialInsuranceUpdateSalary, healthInsuranceUpdateSalary, peopleUpdateSalary, personalDeductionUpdateSalary, overtimeUpdateSalary, netSalaryUpdateSalary, overtimeHourUpdateSalary, overtimeTotalUpdateSalary, incomeUpdateSalary);
+			}
+		});
+		generateSalaryBttn_1.setText("Generate");
+		generateSalaryBttn_1.setSizeSpeed(5.0f);
+		generateSalaryBttn_1.setForeground(Color.WHITE);
+		generateSalaryBttn_1.setFocusPainted(false);
+		generateSalaryBttn_1.setColor2(new Color(0, 0, 51));
+		generateSalaryBttn_1.setColor1(Color.GRAY);
+		generateSalaryBttn_1.setBorder(null);
+		generateSalaryBttn_1.setBackground(SystemColor.menu);
+		generateSalaryBttn_1.setBounds(138, 545, 204, 55);
+		updateSalaryPanel.add(generateSalaryBttn_1);
+		
+		overtimeHourUpdateSalary = new JTextField();
+		overtimeHourUpdateSalary.setSelectedTextColor(Color.WHITE);
+		overtimeHourUpdateSalary.setOpaque(false);
+		overtimeHourUpdateSalary.setForeground(Color.BLACK);
+		overtimeHourUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		overtimeHourUpdateSalary.setColumns(10);
+		overtimeHourUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		overtimeHourUpdateSalary.setBackground(Color.ORANGE);
+		overtimeHourUpdateSalary.setBounds(569, 302, 172, 30);
+		updateSalaryPanel.add(overtimeHourUpdateSalary);
+		
+		JTextPane hourOvertimeTxtUpdateSalary = new JTextPane();
+		hourOvertimeTxtUpdateSalary.setText("Overtime worked(enter hour)");
+		hourOvertimeTxtUpdateSalary.setOpaque(false);
+		hourOvertimeTxtUpdateSalary.setForeground(Color.BLACK);
+		hourOvertimeTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		hourOvertimeTxtUpdateSalary.setEditable(false);
+		hourOvertimeTxtUpdateSalary.setCaretColor(Color.CYAN);
+		hourOvertimeTxtUpdateSalary.setBounds(569, 283, 194, 20);
+		updateSalaryPanel.add(hourOvertimeTxtUpdateSalary);
+		
+		overtimeTotalUpdateSalary = new JTextField();
+		overtimeTotalUpdateSalary.setSelectedTextColor(Color.WHITE);
+		overtimeTotalUpdateSalary.setOpaque(false);
+		overtimeTotalUpdateSalary.setForeground(Color.BLACK);
+		overtimeTotalUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		overtimeTotalUpdateSalary.setEditable(false);
+		overtimeTotalUpdateSalary.setColumns(10);
+		overtimeTotalUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		overtimeTotalUpdateSalary.setBounds(569, 368, 172, 30);
+		updateSalaryPanel.add(overtimeTotalUpdateSalary);
+		
+		JTextPane totalOvertimeTxtUpdateSalary = new JTextPane();
+		totalOvertimeTxtUpdateSalary.setText("Total money for overtime");
+		totalOvertimeTxtUpdateSalary.setOpaque(false);
+		totalOvertimeTxtUpdateSalary.setForeground(Color.BLACK);
+		totalOvertimeTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		totalOvertimeTxtUpdateSalary.setEditable(false);
+		totalOvertimeTxtUpdateSalary.setCaretColor(Color.CYAN);
+		totalOvertimeTxtUpdateSalary.setBounds(569, 349, 172, 20);
+		updateSalaryPanel.add(totalOvertimeTxtUpdateSalary);
+		
+		incomeUpdateSalary = new JTextField();
+		incomeUpdateSalary.setSelectedTextColor(Color.WHITE);
+		incomeUpdateSalary.setOpaque(false);
+		incomeUpdateSalary.setForeground(Color.BLACK);
+		incomeUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		incomeUpdateSalary.setEditable(false);
+		incomeUpdateSalary.setColumns(10);
+		incomeUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		incomeUpdateSalary.setBounds(569, 432, 172, 30);
+		updateSalaryPanel.add(incomeUpdateSalary);
+		
+		JTextPane incomeTxtUpdateSalary = new JTextPane();
+		incomeTxtUpdateSalary.setText("Income tax(10%)");
+		incomeTxtUpdateSalary.setOpaque(false);
+		incomeTxtUpdateSalary.setForeground(Color.BLACK);
+		incomeTxtUpdateSalary.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		incomeTxtUpdateSalary.setEditable(false);
+		incomeTxtUpdateSalary.setCaretColor(Color.CYAN);
+		incomeTxtUpdateSalary.setBounds(569, 413, 172, 20);
+		updateSalaryPanel.add(incomeTxtUpdateSalary);
+		
+		srNoUpdateSalary = new JTextField();
+		srNoUpdateSalary.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					salary_employee.completeWithEnter(srNoUpdateSalary, fnUpdateSalary, lnUpdateSalary, departamentUpdateSalary, grossSalaryUpdateSalary, srNoField, employee_list);
+				}
+				
+				
+			}
+		});
+		srNoUpdateSalary.addFocusListener(new FocusAdapter() {
+			
+			String srNoVerify = srNoUpdateSalary.getText();
+			@Override
+			public void focusGained(FocusEvent e) {
+				
+				if(srNoUpdateSalary.getText().trim().equals("Enter Employee ID to search"))
+				{
+					srNoUpdateSalary.setText("");
+				}
+				srNoUpdateSalary.setForeground(Color.black);
+			}
+			@Override
+			public void focusLost(FocusEvent e) {
+				if(srNoUpdateSalary.getText().trim().equals("") )
+				{
+					srNoUpdateSalary.setText("                                                                Enter Employee ID to search");
+					lnUpdateSalary.setText("");
+					fnUpdateSalary.setText("");
+					departamentUpdateSalary.setText("");
+					grossSalaryUpdateSalary.setText("");
+				}
+				srNoUpdateSalary.setForeground(new Color(153,153,153));
+			}
+		});
+		srNoUpdateSalary.setText("                                                                Enter Employee ID to search");
+		srNoUpdateSalary.setSelectedTextColor(Color.WHITE);
+		srNoUpdateSalary.setOpaque(false);
+		srNoUpdateSalary.setForeground(Color.BLACK);
+		srNoUpdateSalary.setEditable(true);
+		srNoUpdateSalary.setColumns(10);
+		srNoUpdateSalary.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		srNoUpdateSalary.setBounds(101, 126, 543, 30);
+		updateSalaryPanel.add(srNoUpdateSalary);
+		
+		ButtonGradient StoreDBBttn_1 = new ButtonGradient();
+		StoreDBBttn_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				salary_employee.updateSalary(srNoUpdateSalary, grossSalaryUpdateSalary, socialInsuranceUpdateSalary, healthInsuranceUpdateSalary, peopleUpdateSalary, personalDeductionUpdateSalary, overtimeUpdateSalary, netSalaryUpdateSalary, overtimeHourUpdateSalary, overtimeTotalUpdateSalary, incomeUpdateSalary);
+						
+			}
+		});
+		StoreDBBttn_1.setText("Update in database");
+		StoreDBBttn_1.setSizeSpeed(5.0f);
+		StoreDBBttn_1.setForeground(Color.WHITE);
+		StoreDBBttn_1.setFocusPainted(false);
+		StoreDBBttn_1.setColor2(new Color(0, 0, 51));
+		StoreDBBttn_1.setColor1(Color.GRAY);
+		StoreDBBttn_1.setBorder(null);
+		StoreDBBttn_1.setBackground(SystemColor.menu);
+		StoreDBBttn_1.setBounds(402, 545, 204, 55);
+		updateSalaryPanel.add(StoreDBBttn_1);
+		
+		JTextPane txtpnAddEmployeeMenu_1_2_1 = new JTextPane();
+		txtpnAddEmployeeMenu_1_2_1.setText("UPDATE SALARY");
+		txtpnAddEmployeeMenu_1_2_1.setOpaque(false);
+		txtpnAddEmployeeMenu_1_2_1.setForeground(Color.BLACK);
+		txtpnAddEmployeeMenu_1_2_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		txtpnAddEmployeeMenu_1_2_1.setEditable(false);
+		txtpnAddEmployeeMenu_1_2_1.setDisabledTextColor(Color.BLACK);
+		txtpnAddEmployeeMenu_1_2_1.setBounds(299, 23, 214, 44);
+		updateSalaryPanel.add(txtpnAddEmployeeMenu_1_2_1);
 		
 		
 	}

@@ -14,18 +14,18 @@ import connection.MyConnection;
 
 public class Salary {
 	
-	String srNo;
-	Double people; 
-	BigDecimal overTime;
-	BigDecimal netSalary; // NET
-	BigDecimal grossSalary; // BRUT
-	BigDecimal socialInsurance; // CAS
-	BigDecimal healthInsurance;// CASS
-	BigDecimal incomeTax; // IC
-	BigDecimal persoanlDeducion; // PD
-	BigDecimal overTimeHour; 
-	BigDecimal totalMoneyOverTime; 
-	
+	private String srNo;
+	private Double people; 
+	private BigDecimal overTime;
+	private BigDecimal netSalary; // NET
+	private BigDecimal grossSalary; // BRUT
+	private BigDecimal socialInsurance; // CAS
+	private BigDecimal healthInsurance;// CASS
+	private BigDecimal incomeTax; // IC
+	private BigDecimal persoanlDeducion; // PD
+	private BigDecimal overTimeHour; 
+	private BigDecimal totalMoneyOverTime; 
+	private Employee employee_gross;
 	
 	private Connection conn = null;
 	private ResultSet rs = null;
@@ -35,6 +35,7 @@ public class Salary {
 	
 	public Salary()
 	{
+		employee_gross =  new Employee();
 		conn = MyConnection.getInstance().getConnection();
 	}
 	
@@ -259,7 +260,49 @@ public class Salary {
 			}
 			return false;
 	}
+	public void completeWithEnter(JTextField srNoGenerateSalary ,JTextField fnGenerateSalaryField,JTextField lnGenerateSalaryField, JTextField departamentGenerateSalaryField,
+								  JTextField basicSalaryGenerateSalaryField, JTextField srNoField,Employee employee_list )
+	{
+		try {
+			String sql = "select * from employee_list where srno = ?";
+			
+			String srNo =  srNoGenerateSalary.getText();
+			if( employee_list.verifySrNo( srNo,  srNoField) ==  true)
+			{
+				srNoGenerateSalary.setText("");
+				fnGenerateSalaryField.setText("");
+				lnGenerateSalaryField.setText("");
+				departamentGenerateSalaryField.setText("");
+				basicSalaryGenerateSalaryField.setText("");
+			JOptionPane.showMessageDialog(null, "Employee dosen't exist!");
+			
+					
+		    }
+		else {
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, srNoGenerateSalary.getText());
+			rs = ps.executeQuery();
+		
+			if(rs.next() )
+				
+			{
+		
+				fnGenerateSalaryField.setText(rs.getString(2));
+				lnGenerateSalaryField.setText(rs.getString(3));
+				departamentGenerateSalaryField.setText(rs.getString(4));
+				basicSalaryGenerateSalaryField.setText(rs.getString(8));
 	
+			}
+				
+			}
+			
+			
+		} catch (Exception ex) {
+			
+			JOptionPane.showMessageDialog(null, ex);
+			
+		}
+	}
 	
 	public void resetField(JTextField srNoField ,JTextField grossField, JTextField socialInsuranceField,JTextField healthInsuranceField,
 			JTextField peopleField, JTextField persoanlDeducionField, JTextField overTimeField,
@@ -281,5 +324,40 @@ public class Salary {
 		
 		
 	}
+	public void updateSalary(JTextField srNoField ,JTextField grossField, JTextField socialInsuranceField,JTextField healthInsuranceField,
+							 JTextField peopleField, JTextField persoanlDeducionField, JTextField overTimeField,
+							 JTextField netSalaryField, JTextField overTimeHourField , JTextField totalMoneyOverTimeField,
+							 JTextField incomeTaxField  )
+	{
+		srNo = srNoField.getText();
+		String gross = grossField.getText();
+		String si = socialInsuranceField.getText();
+		String hi = healthInsuranceField.getText();
+		String people = peopleField.getText();
+		String dp = persoanlDeducionField.getText();;
+		String ot = overTimeField.getText();
+		String otH = overTimeHourField.getText();
+		String otT = totalMoneyOverTimeField.getText();
+		String it = incomeTaxField.getText();
+		String netSalary = netSalaryField.getText();
+		
+		int p = JOptionPane.showConfirmDialog(null, "Are you sure to update this record?", "Update Record", JOptionPane.YES_NO_OPTION);
+		
+		if(p == 0)
+		{
+			String sql = "UPDATE `salary_list` SET `srno`='"+srNo+"',`grossSalary`='"+gross+"',`deductionPeople`='"+people+"', `personalDeduction`='"+dp+"',`healthInsurance`='"+hi+"',`socialInsurance`='"+si+"',`overtime`='"+ot+"', `overtimeHour`='"+otH+"', `overtimeTotal`='"+otT+"', `incomeTax`='"+it+"',`netSalary`='"+netSalary+"' WHERE `srno`='"+srNo+"'";
+			
+			try {
+				ps = conn.prepareStatement(sql);
+				ps.execute();
+				employee_gross.updateEmployeeSalary(srNoField, grossField);
+				JOptionPane.showMessageDialog(null, "Data updated succesfully!");
+			} catch (Exception ex) {
+				
+				JOptionPane.showMessageDialog(null, ex);
+			}
+		}
 	
+	}
+
 }
