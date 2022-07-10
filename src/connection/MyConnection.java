@@ -22,7 +22,7 @@ public class MyConnection {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/dbEmployee","root","");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/dbEmployee_test","root","");
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());
 		}

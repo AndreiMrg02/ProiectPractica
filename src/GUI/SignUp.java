@@ -279,7 +279,6 @@ public class SignUp extends JFrame {
 						Login l = new Login();
 						l.setVisible(true);
 						frame.dispose();
-						//ps.setString(1, userField.getText());
 					
 						JOptionPane.showMessageDialog(null, "Successfully!");
 					}
@@ -385,7 +384,7 @@ public class SignUp extends JFrame {
 				rs = ps.executeQuery();
 				if(rs.next())
 				{
-					userField.setText("");	
+					userField.setText("");	 //exsita in baza de date return FALSE
 					return false;
 				}
 				else

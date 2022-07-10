@@ -263,7 +263,8 @@ public class Login {
 		} else
 		{
 			String query = "SELECT * FROM `user` WHERE `uname`=? AND `pass`=?";
-			
+			String firstAndLastName;
+			String designation;
 			try {
 				ps = conn.prepareStatement(query);
 				ps.setString(1, uname);
@@ -275,9 +276,12 @@ public class Login {
 					
 					JOptionPane.showMessageDialog(null, "Login Succsessful !");
 					passField.setText("");
-					usernField.setText("");		
+					usernField.setText("");
 					
-					MainMenu menu =  new MainMenu();
+					firstAndLastName =  rs.getString(3) + " " + rs.getString(4) ;
+					designation  =  rs.getString(5);
+					
+					MainMenu menu =  new MainMenu(firstAndLastName,designation);
 					frame.dispose();
 					
 				}

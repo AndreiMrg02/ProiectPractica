@@ -3,6 +3,7 @@ package system;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -49,7 +50,7 @@ public class Employee {
 			 address = address_f.getText();
 			 salary = salaryField.getText();
 			
-			if(fname.equalsIgnoreCase("")) { // verificam daca caseta cu username este goala	
+			if(fname.equalsIgnoreCase("")) { 
 				JOptionPane.showMessageDialog(null, "ERROR: First Name filed is empty");
 			} else if(fname.equals(""))
 			{
@@ -98,7 +99,62 @@ public class Employee {
 		}
 	}
 	
-
+	public void updateEmployee(JTextField srNoUpdateField, JTextField fnUpdateField, JTextField lnUpdateField, JTextField departamentBoxUpdate, JTextField designationBoxUpdate, JTextField contactUpdateField, JTextField addressUpdateField )
+	{
+		srNo = srNoUpdateField.getText();
+		fname = fnUpdateField.getText();
+		lname = lnUpdateField.getText();
+		departament = departamentBoxUpdate.getText();
+		designation = designationBoxUpdate.getText();
+		contact = contactUpdateField.getText();;
+		address = addressUpdateField.getText();
+		
+		int p = JOptionPane.showConfirmDialog(null, "Are you sure to update this record?", "Update Record", JOptionPane.YES_NO_OPTION);
+		
+		if(p == 0)
+		{
+			String sql = "UPDATE `employee_list` SET `srno`='"+srNo+"',`fname`='"+fname+"',`lname`='"+lname+"',`departament`='"+departament+"',`designation`='"+designation+"',`number`='"+contact+"',`address`='"+address+"' WHERE `srno`='"+srNo+"'";
+			try {
+				ps = conn.prepareStatement(sql);
+				ps.execute();
+				JOptionPane.showMessageDialog(null, "Data updated succesfully!");
+			} catch (Exception ex) {
+				
+				JOptionPane.showMessageDialog(null, ex);
+			}
+		}
+	
+	}
+	
+	public void deleteEmployee(JTextField srNoDeleteField, JTextField fnDeleteField, JTextField lnDeleteField, JTextField departamentDeleteField, JTextField designationDeleteField, JTextField contactDeleteField, JTextField addressDeleteField )
+	{
+		int p = JOptionPane.showConfirmDialog(null, "Are you sure to delete this record?", "Delete Record", JOptionPane.YES_NO_OPTION);
+		
+		if(p == 0)
+		{
+			String sql = "delete from employee_list where srno = ?";
+			try {
+				ps = conn.prepareStatement(sql);
+				ps.setString(1, srNoDeleteField.getText());
+				ps.execute();
+				
+				
+				JOptionPane.showMessageDialog(null, "Data deleted from database succesfully!");
+				srNoDeleteField.setText("                                                                Enter Employee ID to search");
+				
+				lnDeleteField.setText("");
+				fnDeleteField.setText("");
+				departamentDeleteField.setText("");
+				designationDeleteField.setText("");
+				contactDeleteField.setText("");
+				addressDeleteField.setText("");
+			} catch (Exception ex) {
+				
+				JOptionPane.showMessageDialog(null, ex);
+			}
+		}
+		
+	}
 	public void selectDesignation(JComboBox<String> departament_b, JComboBox<String> designation_b)
 	{
 		
@@ -161,54 +217,30 @@ public class Employee {
 			designation_b.removeAllItems();
 		}
 	}
-	public String getSrNo() {
-		return srNo;
-	}
-	public void setSrNo(String srNo) {
-		this.srNo = srNo;
-	}
-	public String getFname() {
-		return fname;
-	}
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-	public String getLname() {
-		return lname;
-	}
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-	public String getDepartament() {
-		return departament;
-	}
-	public void setDepartament(String departament) {
-		this.departament = departament;
-	}
-	public String getDesignation() {
-		return designation;
-	}
-	public void setDesignation(String designation) {
-		this.designation = designation;
-	}
-	public String getContact() {
-		return contact;
-	}
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getSalary() {
-		return salary;
-	}
-	public void setSalary(String salary) {
-		this.salary = salary;
-	}
 	
+	public boolean verifySrNo(String srno, JTextField srNoEmployee)
+	{
+			String query = "SELECT * FROM `employee_list` WHERE `srno`=?";
+			
+			try {
+				ps = conn.prepareStatement(query);
+				ps.setString(1, srno);
+				rs = ps.executeQuery();
+				
+				if(rs.next())
+				{
+					return false;
+				}
+				else
+				{
+						
+					return true;
+					
+				}
+			} catch (SQLException ex) {
+				JOptionPane.showMessageDialog(null, ex);
+			}
+			return false;
+	}
 
 }
