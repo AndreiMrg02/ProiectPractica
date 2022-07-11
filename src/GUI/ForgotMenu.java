@@ -1,6 +1,6 @@
 package GUI;
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -21,7 +21,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.BevelBorder;
-import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
@@ -38,7 +37,10 @@ import java.awt.event.KeyEvent;
 
 public class ForgotMenu extends JFrame {
 
-	private JPanel contentPane;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JFrame frame;
 	private JPanel mainPanel = new JPanel();
 	
@@ -86,7 +88,7 @@ public class ForgotMenu extends JFrame {
 		
 		
 	}
-	public void initializare()
+	private void initializare()
 	{
 		frame =  new JFrame();
 		frame.getContentPane().setForeground(Color.WHITE);
@@ -333,9 +335,10 @@ public class ForgotMenu extends JFrame {
 		bttnBack.setBackground(Color.WHITE);
 		bttnBack.setForeground(SystemColor.textHighlight);
 		bttnBack.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("unused")
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				Login login =  new Login();
+				LoginMenu login =  new LoginMenu();
 				frame.dispose();
 			}
 		});

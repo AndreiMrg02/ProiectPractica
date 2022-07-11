@@ -55,7 +55,6 @@ public class SignUp extends JFrame {
 	private int mouseX, mouseY;
 	private Connection conn = null;
 	private PreparedStatement ps = null;
-	private PreparedStatement ps2 = null;
 	private ResultSet rs = null;
 	
 	private JTextField mailField;
@@ -220,6 +219,7 @@ public class SignUp extends JFrame {
 		JButton signupBttn = new JButton("Sign Up");
 		signupBttn.setForeground(SystemColor.textHighlight);
 		signupBttn.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("unused")
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
@@ -276,8 +276,7 @@ public class SignUp extends JFrame {
 						ps.setString(8, mailField.getText());
 						ps.execute();
 						
-						Login l = new Login();
-						l.setVisible(true);
+						LoginMenu l = new LoginMenu();
 						frame.dispose();
 					
 						JOptionPane.showMessageDialog(null, "Successfully!");
@@ -315,7 +314,7 @@ public class SignUp extends JFrame {
 				
 				frame.dispose();
 				@SuppressWarnings("unused")
-				Login login =  new Login();
+				LoginMenu login =  new LoginMenu();
 			}
 		});
 		backBttn.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));

@@ -1,7 +1,6 @@
 package GUI;
 import resources.ButtonGradient;
 import resources.GradientPanel;
-import resources.RoundedPanel;
 import system.Employee;
 import system.Salary;
 
@@ -181,18 +180,18 @@ public class MainMenu extends JFrame {
 		contentPane.add(panelLeft);
 		panelLeft.setLayout(null);
 		
-		GradientPanel Panels = new GradientPanel();
-		Panels.setBounds(221, 33, 779, 617);
-		contentPane.add(Panels);
-		Panels.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
-		Panels.setBackground(Color.BLACK);
-		Panels.setLayout(new CardLayout(0, 0));
+		GradientPanel panels = new GradientPanel();
+		panels.setBounds(221, 33, 779, 617);
+		contentPane.add(panels);
+		panels.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
+		panels.setBackground(Color.BLACK);
+		panels.setLayout(new CardLayout(0, 0));
 		
 		GradientPanel addPanel = new GradientPanel();
 		addPanel.setLayout(null);
-		addPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
+		addPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		addPanel.setBackground(Color.BLACK);
-		Panels.add(addPanel, "name_21359803485800");
+		panels.add(addPanel, "name_21359803485800");
 		
 		srNoField = new JTextField();
 		srNoField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
@@ -280,88 +279,7 @@ public class MainMenu extends JFrame {
 		basicSalaryField.setBounds(138, 489, 543, 30);
 		addPanel.add(basicSalaryField);
 		
-		JTextPane txtpnSrNo = new JTextPane();
-		txtpnSrNo.setForeground(Color.BLACK);
-		txtpnSrNo.setText("Sr No:\r\n");
-		txtpnSrNo.setOpaque(false);
-		txtpnSrNo.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo.setEditable(false);
-		txtpnSrNo.setCaretColor(Color.CYAN);
-		txtpnSrNo.setBounds(138, 129, 67, 20);
-		addPanel.add(txtpnSrNo);
 		
-		JTextPane txtpnFirstName = new JTextPane();
-		txtpnFirstName.setForeground(Color.BLACK);
-		txtpnFirstName.setText("First Name");
-		txtpnFirstName.setOpaque(false);
-		txtpnFirstName.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnFirstName.setEditable(false);
-		txtpnFirstName.setBounds(138, 199, 67, 20);
-		addPanel.add(txtpnFirstName);
-		
-		JTextPane txtpnLastName = new JTextPane();
-		txtpnLastName.setForeground(Color.BLACK);
-		txtpnLastName.setText("Last Name");
-		txtpnLastName.setOpaque(false);
-		txtpnLastName.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnLastName.setEditable(false);
-		txtpnLastName.setBounds(420, 199, 67, 20);
-		addPanel.add(txtpnLastName);
-		
-		JTextPane txtpnDepartament = new JTextPane();
-		txtpnDepartament.setForeground(Color.BLACK);
-		txtpnDepartament.setText("Departament");
-		txtpnDepartament.setOpaque(false);
-		txtpnDepartament.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDepartament.setEditable(false);
-		txtpnDepartament.setBounds(138, 271, 78, 20);
-		addPanel.add(txtpnDepartament);
-		
-		JTextPane txtpnDesignation = new JTextPane();
-		txtpnDesignation.setForeground(Color.BLACK);
-		txtpnDesignation.setText("Designation");
-		txtpnDesignation.setOpaque(false);
-		txtpnDesignation.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDesignation.setEditable(false);
-		txtpnDesignation.setBounds(420, 271, 78, 20);
-		addPanel.add(txtpnDesignation);
-		
-		JTextPane txtpnContactNumber = new JTextPane();
-		txtpnContactNumber.setForeground(Color.BLACK);
-		txtpnContactNumber.setText("Contact number");
-		txtpnContactNumber.setOpaque(false);
-		txtpnContactNumber.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnContactNumber.setEditable(false);
-		txtpnContactNumber.setBounds(138, 345, 94, 20);
-		addPanel.add(txtpnContactNumber);
-		
-		JTextPane txtpnAddress = new JTextPane();
-		txtpnAddress.setForeground(Color.BLACK);
-		txtpnAddress.setText("Address");
-		txtpnAddress.setOpaque(false);
-		txtpnAddress.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnAddress.setEditable(false);
-		txtpnAddress.setBounds(138, 411, 67, 20);
-		addPanel.add(txtpnAddress);
-		
-		JTextPane txtpnBasicSalary = new JTextPane();
-		txtpnBasicSalary.setForeground(Color.BLACK);
-		txtpnBasicSalary.setText("Gross salary(LEI)");
-		txtpnBasicSalary.setOpaque(false);
-		txtpnBasicSalary.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnBasicSalary.setEditable(false);
-		txtpnBasicSalary.setBounds(138, 470, 110, 20);
-		addPanel.add(txtpnBasicSalary);
-		
-		JTextPane txtpnAddEmployeeMenu = new JTextPane();
-		txtpnAddEmployeeMenu.setForeground(Color.BLACK);
-		txtpnAddEmployeeMenu.setText("ADD EMPLOYEE\r\n");
-		txtpnAddEmployeeMenu.setOpaque(false);
-		txtpnAddEmployeeMenu.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
-		txtpnAddEmployeeMenu.setEditable(false);
-		txtpnAddEmployeeMenu.setDisabledTextColor(Color.BLACK);
-		txtpnAddEmployeeMenu.setBounds(324, 38, 214, 44);
-		addPanel.add(txtpnAddEmployeeMenu);
 		
 		ButtonGradient addBttnPanel = new ButtonGradient();
 		addBttnPanel.addMouseListener(new MouseAdapter() {
@@ -381,13 +299,21 @@ public class MainMenu extends JFrame {
 		addBttnPanel.setBounds(294, 530, 204, 55);
 		addPanel.add(addBttnPanel);
 		
+		
+		///////////////////////////////////
+		init_text_add_panel(addPanel);
+		///////////////////////////////////
+		
+		
 		GradientPanel updatePanel = new GradientPanel();
 		updatePanel.setLayout(null);
-		updatePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
+		updatePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		updatePanel.setBackground(Color.BLACK);
-		Panels.add(updatePanel, "name_21373459515600");
+		panels.add(updatePanel, "name_21373459515600");
 		
-		
+		/////////////////////////////////////
+		init_text_update_panel( updatePanel);
+		/////////////////////////////////////
 		
 		fnUpdateField = new JTextField();
 		fnUpdateField.setForeground(Color.BLACK);
@@ -425,79 +351,7 @@ public class MainMenu extends JFrame {
 		addressUpdateField.setBounds(138, 429, 543, 30);
 		updatePanel.add(addressUpdateField);
 		
-		JTextPane txtpnSrNo_1 = new JTextPane();
-		txtpnSrNo_1.setForeground(Color.BLACK);
-		txtpnSrNo_1.setText("Sr No:\r\n");
-		txtpnSrNo_1.setOpaque(false);
-		txtpnSrNo_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1.setEditable(false);
-		txtpnSrNo_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1.setBounds(138, 129, 67, 20);
-		updatePanel.add(txtpnSrNo_1);
 		
-		JTextPane txtpnFirstName_1 = new JTextPane();
-		txtpnFirstName_1.setForeground(Color.BLACK);
-		txtpnFirstName_1.setText("First Name");
-		txtpnFirstName_1.setOpaque(false);
-		txtpnFirstName_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnFirstName_1.setEditable(false);
-		txtpnFirstName_1.setBounds(138, 199, 67, 20);
-		updatePanel.add(txtpnFirstName_1);
-		
-		JTextPane txtpnLastName_1 = new JTextPane();
-		txtpnLastName_1.setForeground(Color.BLACK);
-		txtpnLastName_1.setText("Last Name");
-		txtpnLastName_1.setOpaque(false);
-		txtpnLastName_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnLastName_1.setEditable(false);
-		txtpnLastName_1.setBounds(420, 199, 67, 20);
-		updatePanel.add(txtpnLastName_1);
-		
-		JTextPane txtpnDepartament_1 = new JTextPane();
-		txtpnDepartament_1.setForeground(Color.BLACK);
-		txtpnDepartament_1.setText("Departament");
-		txtpnDepartament_1.setOpaque(false);
-		txtpnDepartament_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDepartament_1.setEditable(false);
-		txtpnDepartament_1.setBounds(138, 271, 78, 20);
-		updatePanel.add(txtpnDepartament_1);
-		
-		JTextPane txtpnDesignation_1 = new JTextPane();
-		txtpnDesignation_1.setForeground(Color.BLACK);
-		txtpnDesignation_1.setText("Designation");
-		txtpnDesignation_1.setOpaque(false);
-		txtpnDesignation_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDesignation_1.setEditable(false);
-		txtpnDesignation_1.setBounds(420, 271, 78, 20);
-		updatePanel.add(txtpnDesignation_1);
-		
-		JTextPane txtpnContactNumber_1 = new JTextPane();
-		txtpnContactNumber_1.setForeground(Color.BLACK);
-		txtpnContactNumber_1.setText("Contact number");
-		txtpnContactNumber_1.setOpaque(false);
-		txtpnContactNumber_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnContactNumber_1.setEditable(false);
-		txtpnContactNumber_1.setBounds(138, 345, 94, 20);
-		updatePanel.add(txtpnContactNumber_1);
-		
-		JTextPane txtpnAddress_1 = new JTextPane();
-		txtpnAddress_1.setForeground(Color.BLACK);
-		txtpnAddress_1.setText("Address");
-		txtpnAddress_1.setOpaque(false);
-		txtpnAddress_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnAddress_1.setEditable(false);
-		txtpnAddress_1.setBounds(138, 411, 67, 20);
-		updatePanel.add(txtpnAddress_1);
-		
-		JTextPane txtpnAddEmployeeMenu_1 = new JTextPane();
-		txtpnAddEmployeeMenu_1.setForeground(Color.BLACK);
-		txtpnAddEmployeeMenu_1.setText("UPDATE EMPLOYEE\r\n");
-		txtpnAddEmployeeMenu_1.setOpaque(false);
-		txtpnAddEmployeeMenu_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
-		txtpnAddEmployeeMenu_1.setEditable(false);
-		txtpnAddEmployeeMenu_1.setDisabledTextColor(Color.BLACK);
-		txtpnAddEmployeeMenu_1.setBounds(324, 38, 214, 44);
-		updatePanel.add(txtpnAddEmployeeMenu_1);
 		
 		ButtonGradient bttnUpdateEmployee = new ButtonGradient();
 		bttnUpdateEmployee.addActionListener(new ActionListener() {
@@ -606,24 +460,20 @@ public class MainMenu extends JFrame {
 		updatePanel.add(gradeBoxUpdate);
 		
 		GradientPanel generatePanel = new GradientPanel();
+		generatePanel.setBackground(Color.BLACK);
+		generatePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		generatePanel.setLayout(null);
-		Panels.add(generatePanel, "name_21390220791400");
+		panels.add(generatePanel, "name_21390220791400");
 		
 
 		GradientPanel updateSalaryPanel = new GradientPanel();
+		updateSalaryPanel.setBackground(Color.BLACK);
+		updateSalaryPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		updateSalaryPanel.setLayout(null);
-		Panels.add(updateSalaryPanel, "name_15035986967600");
+		panels.add(updateSalaryPanel, "name_15035986967600");
 		
-		JTextPane txtpnSrNo_1_2 = new JTextPane();
-		txtpnSrNo_1_2.setForeground(Color.BLACK);
-		txtpnSrNo_1_2.setText("Sr No:\r\n");
-		txtpnSrNo_1_2.setOpaque(false);
-		txtpnSrNo_1_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2.setEditable(false);
-		txtpnSrNo_1_2.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2.setBounds(101, 104, 67, 20);
-		generatePanel.add(txtpnSrNo_1_2);
 		
+		init_text_generate_panel( generatePanel);
 		fnGenerateSalaryField = new JTextField();
 		fnGenerateSalaryField.setForeground(Color.BLACK);
 		fnGenerateSalaryField.setSelectedTextColor(Color.WHITE);
@@ -634,15 +484,7 @@ public class MainMenu extends JFrame {
 		fnGenerateSalaryField.setBounds(39, 243, 166, 30);
 		generatePanel.add(fnGenerateSalaryField);
 		
-		JTextPane txtpnSrNo_1_2_1 = new JTextPane();
-		txtpnSrNo_1_2_1.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1.setText("First name");
-		txtpnSrNo_1_2_1.setOpaque(false);
-		txtpnSrNo_1_2_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1.setEditable(false);
-		txtpnSrNo_1_2_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1.setBounds(39, 224, 67, 20);
-		generatePanel.add(txtpnSrNo_1_2_1);
+		
 		
 		lnGenerateSalaryField = new JTextField();
 		lnGenerateSalaryField.setForeground(Color.BLACK);
@@ -654,15 +496,7 @@ public class MainMenu extends JFrame {
 		lnGenerateSalaryField.setBounds(39, 302, 166, 30);
 		generatePanel.add(lnGenerateSalaryField);
 		
-		JTextPane txtpnSrNo_1_2_1_1 = new JTextPane();
-		txtpnSrNo_1_2_1_1.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_1.setText("Last name");
-		txtpnSrNo_1_2_1_1.setOpaque(false);
-		txtpnSrNo_1_2_1_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_1.setEditable(false);
-		txtpnSrNo_1_2_1_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_1.setBounds(39, 283, 67, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_1);
+		
 		
 		departamentGenerateSalaryField = new JTextField();
 		departamentGenerateSalaryField.setForeground(Color.BLACK);
@@ -674,16 +508,7 @@ public class MainMenu extends JFrame {
 		departamentGenerateSalaryField.setBounds(39, 368, 166, 30);
 		generatePanel.add(departamentGenerateSalaryField);
 		
-		JTextPane txtpnSrNo_1_2_1_2 = new JTextPane();
-		txtpnSrNo_1_2_1_2.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_2.setText("Departament");
-		txtpnSrNo_1_2_1_2.setOpaque(false);
-		txtpnSrNo_1_2_1_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_2.setEditable(false);
-		txtpnSrNo_1_2_1_2.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_2.setBounds(39, 349, 82, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_2);
-		
+	
 		basicSalaryGenerateSalaryField = new JTextField();
 		basicSalaryGenerateSalaryField.setForeground(Color.BLACK);
 		basicSalaryGenerateSalaryField.setSelectedTextColor(Color.WHITE);
@@ -694,15 +519,7 @@ public class MainMenu extends JFrame {
 		basicSalaryGenerateSalaryField.setBounds(39, 432, 166, 30);
 		generatePanel.add(basicSalaryGenerateSalaryField);
 		
-		JTextPane txtpnSrNo_1_2_1_2_1 = new JTextPane();
-		txtpnSrNo_1_2_1_2_1.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_2_1.setText("Gross Salary(Lei)");
-		txtpnSrNo_1_2_1_2_1.setOpaque(false);
-		txtpnSrNo_1_2_1_2_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_2_1.setEditable(false);
-		txtpnSrNo_1_2_1_2_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_2_1.setBounds(39, 413, 103, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_2_1);
+
 		
 		overTimeField = new JTextField();
 		overTimeField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
@@ -717,23 +534,7 @@ public class MainMenu extends JFrame {
 		overTimeField.setBounds(569, 243, 172, 30);
 		generatePanel.add(overTimeField);
 		
-		JTextPane txtpnEmployeeInformation = new JTextPane();
-		txtpnEmployeeInformation.setForeground(new Color(0, 0, 102));
-		txtpnEmployeeInformation.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
-		txtpnEmployeeInformation.setOpaque(false);
-		txtpnEmployeeInformation.setEditable(false);
-		txtpnEmployeeInformation.setText("Employee information");
-		txtpnEmployeeInformation.setBounds(39, 190, 180, 23);
-		generatePanel.add(txtpnEmployeeInformation);
 		
-		JTextPane txtpnIntroduceData = new JTextPane();
-		txtpnIntroduceData.setText("Enter the data");
-		txtpnIntroduceData.setOpaque(false);
-		txtpnIntroduceData.setForeground(new Color(0, 0, 102));
-		txtpnIntroduceData.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
-		txtpnIntroduceData.setEditable(false);
-		txtpnIntroduceData.setBounds(500, 183, 114, 30);
-		generatePanel.add(txtpnIntroduceData);
 		
 		socialInsuranceField = new JTextField();
 		socialInsuranceField.setForeground(Color.BLACK);
@@ -746,25 +547,7 @@ public class MainMenu extends JFrame {
 		socialInsuranceField.setBounds(364, 432, 172, 30);
 		generatePanel.add(socialInsuranceField);
 		
-		JTextPane txtpnSrNo_1_2_1_3 = new JTextPane();
-		txtpnSrNo_1_2_1_3.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_3.setText("Overtime(Lei)*:\r\n");
-		txtpnSrNo_1_2_1_3.setOpaque(false);
-		txtpnSrNo_1_2_1_3.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_3.setEditable(false);
-		txtpnSrNo_1_2_1_3.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_3.setBounds(569, 224, 172, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_3);
-		
-		JTextPane txtpnSrNo_1_2_1_3_1 = new JTextPane();
-		txtpnSrNo_1_2_1_3_1.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_3_1.setText("Social Insurance(25%)\r\n");
-		txtpnSrNo_1_2_1_3_1.setOpaque(false);
-		txtpnSrNo_1_2_1_3_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_3_1.setEditable(false);
-		txtpnSrNo_1_2_1_3_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_3_1.setBounds(364, 413, 172, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_3_1);
+	
 		
 		healthInsuranceField = new JTextField();
 		healthInsuranceField.setForeground(Color.BLACK);
@@ -777,15 +560,7 @@ public class MainMenu extends JFrame {
 		healthInsuranceField.setBounds(364, 368, 172, 30);
 		generatePanel.add(healthInsuranceField);
 		
-		JTextPane healthInsuranceTxt = new JTextPane();
-		healthInsuranceTxt.setForeground(Color.BLACK);
-		healthInsuranceTxt.setText("Health Insurance(10%)");
-		healthInsuranceTxt.setOpaque(false);
-		healthInsuranceTxt.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		healthInsuranceTxt.setEditable(false);
-		healthInsuranceTxt.setCaretColor(Color.CYAN);
-		healthInsuranceTxt.setBounds(364, 349, 172, 20);
-		generatePanel.add(healthInsuranceTxt);
+	
 		
 		peopleField = new JTextField();
 		peopleField.setBackground(Color.ORANGE);
@@ -801,16 +576,6 @@ public class MainMenu extends JFrame {
 		peopleField.setBounds(364, 243, 172, 30);
 		generatePanel.add(peopleField);
 		
-		JTextPane txtpnPeopleForDeduction = new JTextPane();
-		txtpnPeopleForDeduction.setForeground(Color.BLACK);
-		txtpnPeopleForDeduction.setText("People for deduction\r\n*");
-		txtpnPeopleForDeduction.setOpaque(false);
-		txtpnPeopleForDeduction.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnPeopleForDeduction.setEditable(false);
-		txtpnPeopleForDeduction.setCaretColor(Color.CYAN);
-		txtpnPeopleForDeduction.setBounds(364, 224, 132, 20);
-		generatePanel.add(txtpnPeopleForDeduction);
-		
 		personalDeductionField = new JTextField();
 		personalDeductionField.setForeground(Color.BLACK);
 		personalDeductionField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
@@ -822,15 +587,6 @@ public class MainMenu extends JFrame {
 		personalDeductionField.setBounds(364, 302, 172, 30);
 		generatePanel.add(personalDeductionField);
 		
-		JTextPane txtpnPersonalDeduction = new JTextPane();
-		txtpnPersonalDeduction.setForeground(Color.BLACK);
-		txtpnPersonalDeduction.setText("Personal Deduction");
-		txtpnPersonalDeduction.setOpaque(false);
-		txtpnPersonalDeduction.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnPersonalDeduction.setEditable(false);
-		txtpnPersonalDeduction.setCaretColor(Color.CYAN);
-		txtpnPersonalDeduction.setBounds(368, 283, 172, 20);
-		generatePanel.add(txtpnPersonalDeduction);
 		
 		netSalaryField = new JTextField();
 		netSalaryField.setForeground(Color.BLACK);
@@ -843,15 +599,17 @@ public class MainMenu extends JFrame {
 		netSalaryField.setBounds(364, 492, 377, 30);
 		generatePanel.add(netSalaryField);
 		
-		JTextPane txtpnSrNo_1_2_1_3_2 = new JTextPane();
-		txtpnSrNo_1_2_1_3_2.setForeground(Color.BLACK);
-		txtpnSrNo_1_2_1_3_2.setText("Net salary(Lei):\r\n");
-		txtpnSrNo_1_2_1_3_2.setOpaque(false);
-		txtpnSrNo_1_2_1_3_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_2_1_3_2.setEditable(false);
-		txtpnSrNo_1_2_1_3_2.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_2_1_3_2.setBounds(364, 473, 377, 20);
-		generatePanel.add(txtpnSrNo_1_2_1_3_2);
+		overTimeHourField = new JTextField();
+		overTimeHourField.setBackground(Color.ORANGE);
+		overTimeHourField.setSelectedTextColor(Color.WHITE);
+		overTimeHourField.setOpaque(false);
+		overTimeHourField.setForeground(Color.BLACK);
+		overTimeHourField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		overTimeHourField.setColumns(10);
+		overTimeHourField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		overTimeHourField.setBounds(569, 302, 172, 30);
+		generatePanel.add(overTimeHourField);
+		
 		
 		ButtonGradient generateSalaryBttn = new ButtonGradient();
 		generateSalaryBttn.addMouseListener(new MouseAdapter() {
@@ -872,26 +630,9 @@ public class MainMenu extends JFrame {
 		generateSalaryBttn.setBounds(138, 545, 204, 55);
 		generatePanel.add(generateSalaryBttn);
 		
-		overTimeHourField = new JTextField();
-		overTimeHourField.setBackground(Color.ORANGE);
-		overTimeHourField.setSelectedTextColor(Color.WHITE);
-		overTimeHourField.setOpaque(false);
-		overTimeHourField.setForeground(Color.BLACK);
-		overTimeHourField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		overTimeHourField.setColumns(10);
-		overTimeHourField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
-		overTimeHourField.setBounds(569, 302, 172, 30);
-		generatePanel.add(overTimeHourField);
+
 		
-		JTextPane txtpnWorkHours = new JTextPane();
-		txtpnWorkHours.setForeground(Color.BLACK);
-		txtpnWorkHours.setText("Overtime worked(enter hour)");
-		txtpnWorkHours.setOpaque(false);
-		txtpnWorkHours.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnWorkHours.setEditable(false);
-		txtpnWorkHours.setCaretColor(Color.CYAN);
-		txtpnWorkHours.setBounds(569, 283, 194, 20);
-		generatePanel.add(txtpnWorkHours);
+		
 		
 		totalMoneyOvertime = new JTextField();
 		totalMoneyOvertime.setSelectedTextColor(Color.WHITE);
@@ -904,15 +645,7 @@ public class MainMenu extends JFrame {
 		totalMoneyOvertime.setBounds(569, 368, 172, 30);
 		generatePanel.add(totalMoneyOvertime);
 		
-		JTextPane txtpnTotalMoneyFor = new JTextPane();
-		txtpnTotalMoneyFor.setForeground(Color.BLACK);
-		txtpnTotalMoneyFor.setText("Total money for overtime");
-		txtpnTotalMoneyFor.setOpaque(false);
-		txtpnTotalMoneyFor.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnTotalMoneyFor.setEditable(false);
-		txtpnTotalMoneyFor.setCaretColor(Color.CYAN);
-		txtpnTotalMoneyFor.setBounds(569, 349, 172, 20);
-		generatePanel.add(txtpnTotalMoneyFor);
+
 		
 		incomeTaxField = new JTextField();
 		incomeTaxField.setSelectedTextColor(Color.WHITE);
@@ -925,21 +658,13 @@ public class MainMenu extends JFrame {
 		incomeTaxField.setBounds(569, 432, 172, 30);
 		generatePanel.add(incomeTaxField);
 		
-		JTextPane txtpnIncomeTax = new JTextPane();
-		txtpnIncomeTax.setForeground(Color.BLACK);
-		txtpnIncomeTax.setText("Income tax(10%)");
-		txtpnIncomeTax.setOpaque(false);
-		txtpnIncomeTax.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnIncomeTax.setEditable(false);
-		txtpnIncomeTax.setCaretColor(Color.CYAN);
-		txtpnIncomeTax.setBounds(569, 413, 172, 20);
-		generatePanel.add(txtpnIncomeTax);
+		
 		
 		GradientPanel deletePanel = new GradientPanel();
 		deletePanel.setLayout(null);
-		deletePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
+		deletePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		deletePanel.setBackground(Color.BLACK);
-		Panels.add(deletePanel, "name_271489301300");
+		panels.add(deletePanel, "name_271489301300");
 		
 		JPanel panelHeader = new JPanel();
 		panelHeader.setOpaque(true);
@@ -1078,7 +803,7 @@ public class MainMenu extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				@SuppressWarnings("unused")
-				Login login = new Login();
+				LoginMenu login = new LoginMenu();
 				frame.dispose();
 				
 				
@@ -1127,19 +852,20 @@ public class MainMenu extends JFrame {
 		empNameField.setColumns(10);
 		
 		desField = new JTextField();
-		desField.setText("designation");
+		desField.setText("                  designation");
 		desField.setOpaque(false);
 		desField.setForeground(Color.LIGHT_GRAY);
 		desField.setFont(new Font("Segoe UI", Font.BOLD, 11));
 		desField.setEditable(false);
 		desField.setColumns(10);
 		desField.setBorder(null);
-		desField.setBounds(65, 119, 128, 20);
+		desField.setBounds(55, 119, 138, 20);
 		panelLeft.add(desField);
 		
 		
-		
-	
+		////////////////////////////////////
+		init_text_delete_panel( deletePanel);
+		////////////////////////////////////
 		
 		fnDeleteField = new JTextField();
 		fnDeleteField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
@@ -1185,79 +911,7 @@ public class MainMenu extends JFrame {
 		addressDeleteField.setBounds(138, 429, 543, 30);
 		deletePanel.add(addressDeleteField);
 		
-		JTextPane txtpnSrNo_1_1 = new JTextPane();
-		txtpnSrNo_1_1.setForeground(Color.BLACK);
-		txtpnSrNo_1_1.setText("Sr No:\r\n");
-		txtpnSrNo_1_1.setOpaque(false);
-		txtpnSrNo_1_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
-		txtpnSrNo_1_1.setEditable(false);
-		txtpnSrNo_1_1.setCaretColor(Color.CYAN);
-		txtpnSrNo_1_1.setBounds(138, 129, 67, 20);
-		deletePanel.add(txtpnSrNo_1_1);
 		
-		JTextPane txtpnFirstName_1_1 = new JTextPane();
-		txtpnFirstName_1_1.setForeground(Color.BLACK);
-		txtpnFirstName_1_1.setText("First Name");
-		txtpnFirstName_1_1.setOpaque(false);
-		txtpnFirstName_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnFirstName_1_1.setEditable(false);
-		txtpnFirstName_1_1.setBounds(138, 199, 67, 20);
-		deletePanel.add(txtpnFirstName_1_1);
-		
-		JTextPane txtpnLastName_1_1 = new JTextPane();
-		txtpnLastName_1_1.setForeground(Color.BLACK);
-		txtpnLastName_1_1.setText("Last Name");
-		txtpnLastName_1_1.setOpaque(false);
-		txtpnLastName_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnLastName_1_1.setEditable(false);
-		txtpnLastName_1_1.setBounds(420, 199, 67, 20);
-		deletePanel.add(txtpnLastName_1_1);
-		
-		JTextPane txtpnDepartament_1_1 = new JTextPane();
-		txtpnDepartament_1_1.setForeground(Color.BLACK);
-		txtpnDepartament_1_1.setText("Departament");
-		txtpnDepartament_1_1.setOpaque(false);
-		txtpnDepartament_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDepartament_1_1.setEditable(false);
-		txtpnDepartament_1_1.setBounds(138, 271, 78, 20);
-		deletePanel.add(txtpnDepartament_1_1);
-		
-		JTextPane txtpnDesignation_1_1 = new JTextPane();
-		txtpnDesignation_1_1.setForeground(Color.BLACK);
-		txtpnDesignation_1_1.setText("Designation");
-		txtpnDesignation_1_1.setOpaque(false);
-		txtpnDesignation_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnDesignation_1_1.setEditable(false);
-		txtpnDesignation_1_1.setBounds(420, 271, 78, 20);
-		deletePanel.add(txtpnDesignation_1_1);
-		
-		JTextPane txtpnContactNumber_1_1 = new JTextPane();
-		txtpnContactNumber_1_1.setForeground(Color.BLACK);
-		txtpnContactNumber_1_1.setText("Contact number");
-		txtpnContactNumber_1_1.setOpaque(false);
-		txtpnContactNumber_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnContactNumber_1_1.setEditable(false);
-		txtpnContactNumber_1_1.setBounds(138, 345, 94, 20);
-		deletePanel.add(txtpnContactNumber_1_1);
-		
-		JTextPane txtpnAddress_1_1 = new JTextPane();
-		txtpnAddress_1_1.setForeground(Color.BLACK);
-		txtpnAddress_1_1.setText("Address");
-		txtpnAddress_1_1.setOpaque(false);
-		txtpnAddress_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
-		txtpnAddress_1_1.setEditable(false);
-		txtpnAddress_1_1.setBounds(138, 411, 67, 20);
-		deletePanel.add(txtpnAddress_1_1);
-		
-		JTextPane txtpnAddEmployeeMenu_1_1 = new JTextPane();
-		txtpnAddEmployeeMenu_1_1.setForeground(Color.BLACK);
-		txtpnAddEmployeeMenu_1_1.setText("DELETE EMPLOYEE\r\n");
-		txtpnAddEmployeeMenu_1_1.setOpaque(false);
-		txtpnAddEmployeeMenu_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
-		txtpnAddEmployeeMenu_1_1.setEditable(false);
-		txtpnAddEmployeeMenu_1_1.setDisabledTextColor(Color.BLACK);
-		txtpnAddEmployeeMenu_1_1.setBounds(324, 38, 214, 44);
-		deletePanel.add(txtpnAddEmployeeMenu_1_1);
 		
 		ButtonGradient bttnDeleteEmployee_1 = new ButtonGradient();
 		bttnDeleteEmployee_1.addActionListener(new ActionListener() {
@@ -1693,23 +1347,23 @@ public class MainMenu extends JFrame {
 		netTxtUpdateSalary.setBounds(364, 473, 377, 20);
 		updateSalaryPanel.add(netTxtUpdateSalary);
 		
-		ButtonGradient generateSalaryBttn_1 = new ButtonGradient();
-		generateSalaryBttn_1.addMouseListener(new MouseAdapter() {
+		ButtonGradient generateSalaryBttnUpdate = new ButtonGradient();
+		generateSalaryBttnUpdate.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				salary_employee.calculateSalary(grossSalaryUpdateSalary, socialInsuranceUpdateSalary, healthInsuranceUpdateSalary, peopleUpdateSalary, personalDeductionUpdateSalary, overtimeUpdateSalary, netSalaryUpdateSalary, overtimeHourUpdateSalary, overtimeTotalUpdateSalary, incomeUpdateSalary);
 			}
 		});
-		generateSalaryBttn_1.setText("Generate");
-		generateSalaryBttn_1.setSizeSpeed(5.0f);
-		generateSalaryBttn_1.setForeground(Color.WHITE);
-		generateSalaryBttn_1.setFocusPainted(false);
-		generateSalaryBttn_1.setColor2(new Color(0, 0, 51));
-		generateSalaryBttn_1.setColor1(Color.GRAY);
-		generateSalaryBttn_1.setBorder(null);
-		generateSalaryBttn_1.setBackground(SystemColor.menu);
-		generateSalaryBttn_1.setBounds(138, 545, 204, 55);
-		updateSalaryPanel.add(generateSalaryBttn_1);
+		generateSalaryBttnUpdate.setText("Generate");
+		generateSalaryBttnUpdate.setSizeSpeed(5.0f);
+		generateSalaryBttnUpdate.setForeground(Color.WHITE);
+		generateSalaryBttnUpdate.setFocusPainted(false);
+		generateSalaryBttnUpdate.setColor2(new Color(0, 0, 51));
+		generateSalaryBttnUpdate.setColor1(Color.GRAY);
+		generateSalaryBttnUpdate.setBorder(null);
+		generateSalaryBttnUpdate.setBackground(SystemColor.menu);
+		generateSalaryBttnUpdate.setBounds(138, 545, 204, 55);
+		updateSalaryPanel.add(generateSalaryBttnUpdate);
 		
 		overtimeHourUpdateSalary = new JTextField();
 		overtimeHourUpdateSalary.setSelectedTextColor(Color.WHITE);
@@ -1788,7 +1442,6 @@ public class MainMenu extends JFrame {
 		});
 		srNoUpdateSalary.addFocusListener(new FocusAdapter() {
 			
-			String srNoVerify = srNoUpdateSalary.getText();
 			@Override
 			public void focusGained(FocusEvent e) {
 				
@@ -1821,24 +1474,24 @@ public class MainMenu extends JFrame {
 		srNoUpdateSalary.setBounds(101, 126, 543, 30);
 		updateSalaryPanel.add(srNoUpdateSalary);
 		
-		ButtonGradient StoreDBBttn_1 = new ButtonGradient();
-		StoreDBBttn_1.addMouseListener(new MouseAdapter() {
+		ButtonGradient updateSalaryBttn = new ButtonGradient();
+		updateSalaryBttn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				salary_employee.updateSalary(srNoUpdateSalary, grossSalaryUpdateSalary, socialInsuranceUpdateSalary, healthInsuranceUpdateSalary, peopleUpdateSalary, personalDeductionUpdateSalary, overtimeUpdateSalary, netSalaryUpdateSalary, overtimeHourUpdateSalary, overtimeTotalUpdateSalary, incomeUpdateSalary);
 						
 			}
 		});
-		StoreDBBttn_1.setText("Update in database");
-		StoreDBBttn_1.setSizeSpeed(5.0f);
-		StoreDBBttn_1.setForeground(Color.WHITE);
-		StoreDBBttn_1.setFocusPainted(false);
-		StoreDBBttn_1.setColor2(new Color(0, 0, 51));
-		StoreDBBttn_1.setColor1(Color.GRAY);
-		StoreDBBttn_1.setBorder(null);
-		StoreDBBttn_1.setBackground(SystemColor.menu);
-		StoreDBBttn_1.setBounds(402, 545, 204, 55);
-		updateSalaryPanel.add(StoreDBBttn_1);
+		updateSalaryBttn.setText("Update in database");
+		updateSalaryBttn.setSizeSpeed(5.0f);
+		updateSalaryBttn.setForeground(Color.WHITE);
+		updateSalaryBttn.setFocusPainted(false);
+		updateSalaryBttn.setColor2(new Color(0, 0, 51));
+		updateSalaryBttn.setColor1(Color.GRAY);
+		updateSalaryBttn.setBorder(null);
+		updateSalaryBttn.setBackground(SystemColor.menu);
+		updateSalaryBttn.setBounds(402, 545, 204, 55);
+		updateSalaryPanel.add(updateSalaryBttn);
 		
 		JTextPane txtpnAddEmployeeMenu_1_2_1 = new JTextPane();
 		txtpnAddEmployeeMenu_1_2_1.setText("UPDATE SALARY");
@@ -1852,7 +1505,417 @@ public class MainMenu extends JFrame {
 		
 		
 	}
+	private void init_text_add_panel(JPanel addPanel)
+	{
+		JTextPane txtpnSrNo = new JTextPane();
+		txtpnSrNo.setForeground(Color.BLACK);
+		txtpnSrNo.setText("Sr No:\r\n");
+		txtpnSrNo.setOpaque(false);
+		txtpnSrNo.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo.setEditable(false);
+		txtpnSrNo.setCaretColor(Color.CYAN);
+		txtpnSrNo.setBounds(138, 129, 67, 20);
+		addPanel.add(txtpnSrNo);
+		
+		JTextPane txtpnFirstName = new JTextPane();
+		txtpnFirstName.setForeground(Color.BLACK);
+		txtpnFirstName.setText("First Name");
+		txtpnFirstName.setOpaque(false);
+		txtpnFirstName.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnFirstName.setEditable(false);
+		txtpnFirstName.setBounds(138, 199, 67, 20);
+		addPanel.add(txtpnFirstName);
+		
+		JTextPane txtpnLastName = new JTextPane();
+		txtpnLastName.setForeground(Color.BLACK);
+		txtpnLastName.setText("Last Name");
+		txtpnLastName.setOpaque(false);
+		txtpnLastName.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnLastName.setEditable(false);
+		txtpnLastName.setBounds(420, 199, 67, 20);
+		addPanel.add(txtpnLastName);
+		
+		JTextPane txtpnDepartament = new JTextPane();
+		txtpnDepartament.setForeground(Color.BLACK);
+		txtpnDepartament.setText("Departament");
+		txtpnDepartament.setOpaque(false);
+		txtpnDepartament.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDepartament.setEditable(false);
+		txtpnDepartament.setBounds(138, 271, 78, 20);
+		addPanel.add(txtpnDepartament);
+		
+		JTextPane txtpnDesignation = new JTextPane();
+		txtpnDesignation.setForeground(Color.BLACK);
+		txtpnDesignation.setText("Designation");
+		txtpnDesignation.setOpaque(false);
+		txtpnDesignation.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDesignation.setEditable(false);
+		txtpnDesignation.setBounds(420, 271, 78, 20);
+		addPanel.add(txtpnDesignation);
+		
+		JTextPane txtpnContactNumber = new JTextPane();
+		txtpnContactNumber.setForeground(Color.BLACK);
+		txtpnContactNumber.setText("Contact number");
+		txtpnContactNumber.setOpaque(false);
+		txtpnContactNumber.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnContactNumber.setEditable(false);
+		txtpnContactNumber.setBounds(138, 345, 94, 20);
+		addPanel.add(txtpnContactNumber);
+		
+		JTextPane txtpnAddress = new JTextPane();
+		txtpnAddress.setForeground(Color.BLACK);
+		txtpnAddress.setText("Address");
+		txtpnAddress.setOpaque(false);
+		txtpnAddress.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnAddress.setEditable(false);
+		txtpnAddress.setBounds(138, 411, 67, 20);
+		addPanel.add(txtpnAddress);
+		
+		JTextPane txtpnBasicSalary = new JTextPane();
+		txtpnBasicSalary.setForeground(Color.BLACK);
+		txtpnBasicSalary.setText("Gross salary(LEI)");
+		txtpnBasicSalary.setOpaque(false);
+		txtpnBasicSalary.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnBasicSalary.setEditable(false);
+		txtpnBasicSalary.setBounds(138, 470, 110, 20);
+		addPanel.add(txtpnBasicSalary);
+		
+		JTextPane txtpnAddEmployeeMenu = new JTextPane();
+		txtpnAddEmployeeMenu.setForeground(Color.BLACK);
+		txtpnAddEmployeeMenu.setText("ADD EMPLOYEE\r\n");
+		txtpnAddEmployeeMenu.setOpaque(false);
+		txtpnAddEmployeeMenu.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		txtpnAddEmployeeMenu.setEditable(false);
+		txtpnAddEmployeeMenu.setDisabledTextColor(Color.BLACK);
+		txtpnAddEmployeeMenu.setBounds(324, 38, 214, 44);
+		addPanel.add(txtpnAddEmployeeMenu);
+		
+	}
+	
+	private void init_text_update_panel(GradientPanel updatePanel)
+	{
+		JTextPane txtpnSrNo_1 = new JTextPane();
+		txtpnSrNo_1.setForeground(Color.BLACK);
+		txtpnSrNo_1.setText("Sr No:\r\n");
+		txtpnSrNo_1.setOpaque(false);
+		txtpnSrNo_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1.setEditable(false);
+		txtpnSrNo_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1.setBounds(138, 129, 67, 20);
+		updatePanel.add(txtpnSrNo_1);
+		
+		JTextPane txtpnFirstName_1 = new JTextPane();
+		txtpnFirstName_1.setForeground(Color.BLACK);
+		txtpnFirstName_1.setText("First Name");
+		txtpnFirstName_1.setOpaque(false);
+		txtpnFirstName_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnFirstName_1.setEditable(false);
+		txtpnFirstName_1.setBounds(138, 199, 67, 20);
+		updatePanel.add(txtpnFirstName_1);
+		
+		JTextPane txtpnLastName_1 = new JTextPane();
+		txtpnLastName_1.setForeground(Color.BLACK);
+		txtpnLastName_1.setText("Last Name");
+		txtpnLastName_1.setOpaque(false);
+		txtpnLastName_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnLastName_1.setEditable(false);
+		txtpnLastName_1.setBounds(420, 199, 67, 20);
+		updatePanel.add(txtpnLastName_1);
+		
+		JTextPane txtpnDepartament_1 = new JTextPane();
+		txtpnDepartament_1.setForeground(Color.BLACK);
+		txtpnDepartament_1.setText("Departament");
+		txtpnDepartament_1.setOpaque(false);
+		txtpnDepartament_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDepartament_1.setEditable(false);
+		txtpnDepartament_1.setBounds(138, 271, 78, 20);
+		updatePanel.add(txtpnDepartament_1);
+		
+		JTextPane txtpnDesignation_1 = new JTextPane();
+		txtpnDesignation_1.setForeground(Color.BLACK);
+		txtpnDesignation_1.setText("Designation");
+		txtpnDesignation_1.setOpaque(false);
+		txtpnDesignation_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDesignation_1.setEditable(false);
+		txtpnDesignation_1.setBounds(420, 271, 78, 20);
+		updatePanel.add(txtpnDesignation_1);
+		
+		JTextPane txtpnContactNumber_1 = new JTextPane();
+		txtpnContactNumber_1.setForeground(Color.BLACK);
+		txtpnContactNumber_1.setText("Contact number");
+		txtpnContactNumber_1.setOpaque(false);
+		txtpnContactNumber_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnContactNumber_1.setEditable(false);
+		txtpnContactNumber_1.setBounds(138, 345, 94, 20);
+		updatePanel.add(txtpnContactNumber_1);
+		
+		JTextPane txtpnAddress_1 = new JTextPane();
+		txtpnAddress_1.setForeground(Color.BLACK);
+		txtpnAddress_1.setText("Address");
+		txtpnAddress_1.setOpaque(false);
+		txtpnAddress_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnAddress_1.setEditable(false);
+		txtpnAddress_1.setBounds(138, 411, 67, 20);
+		updatePanel.add(txtpnAddress_1);
+		
+		JTextPane txtpnAddEmployeeMenu_1 = new JTextPane();
+		txtpnAddEmployeeMenu_1.setForeground(Color.BLACK);
+		txtpnAddEmployeeMenu_1.setText("UPDATE EMPLOYEE\r\n");
+		txtpnAddEmployeeMenu_1.setOpaque(false);
+		txtpnAddEmployeeMenu_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		txtpnAddEmployeeMenu_1.setEditable(false);
+		txtpnAddEmployeeMenu_1.setDisabledTextColor(Color.BLACK);
+		txtpnAddEmployeeMenu_1.setBounds(324, 38, 214, 44);
+		updatePanel.add(txtpnAddEmployeeMenu_1);
+	}
+	
+	private void init_text_generate_panel(GradientPanel generatePanel)
+	{
+		
+		JTextPane txtpnSrNo_1_2 = new JTextPane();
+		txtpnSrNo_1_2.setForeground(Color.BLACK);
+		txtpnSrNo_1_2.setText("Sr No:\r\n");
+		txtpnSrNo_1_2.setOpaque(false);
+		txtpnSrNo_1_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2.setEditable(false);
+		txtpnSrNo_1_2.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2.setBounds(101, 104, 67, 20);
+		generatePanel.add(txtpnSrNo_1_2);
+		
+		JTextPane txtpnSrNo_1_2_1 = new JTextPane();
+		txtpnSrNo_1_2_1.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1.setText("First name");
+		txtpnSrNo_1_2_1.setOpaque(false);
+		txtpnSrNo_1_2_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1.setEditable(false);
+		txtpnSrNo_1_2_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1.setBounds(39, 224, 67, 20);
+		generatePanel.add(txtpnSrNo_1_2_1);
+		
+		JTextPane txtpnSrNo_1_2_1_1 = new JTextPane();
+		txtpnSrNo_1_2_1_1.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_1.setText("Last name");
+		txtpnSrNo_1_2_1_1.setOpaque(false);
+		txtpnSrNo_1_2_1_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_1.setEditable(false);
+		txtpnSrNo_1_2_1_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_1.setBounds(39, 283, 67, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_1);
+		
+		
+		JTextPane txtpnEmployeeInformation = new JTextPane();
+		txtpnEmployeeInformation.setForeground(new Color(0, 0, 102));
+		txtpnEmployeeInformation.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		txtpnEmployeeInformation.setOpaque(false);
+		txtpnEmployeeInformation.setEditable(false);
+		txtpnEmployeeInformation.setText("Employee information");
+		txtpnEmployeeInformation.setBounds(39, 190, 180, 23);
+		generatePanel.add(txtpnEmployeeInformation);
+		
+		
+		JTextPane txtpnSrNo_1_2_1_2 = new JTextPane();
+		txtpnSrNo_1_2_1_2.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_2.setText("Departament");
+		txtpnSrNo_1_2_1_2.setOpaque(false);
+		txtpnSrNo_1_2_1_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_2.setEditable(false);
+		txtpnSrNo_1_2_1_2.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_2.setBounds(39, 349, 82, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_2);
+		
+		
+		JTextPane txtpnIntroduceData = new JTextPane();
+		txtpnIntroduceData.setText("Enter the data");
+		txtpnIntroduceData.setOpaque(false);
+		txtpnIntroduceData.setForeground(new Color(0, 0, 102));
+		txtpnIntroduceData.setFont(new Font("Segoe UI Black", Font.PLAIN, 15));
+		txtpnIntroduceData.setEditable(false);
+		txtpnIntroduceData.setBounds(500, 183, 114, 30);
+		generatePanel.add(txtpnIntroduceData);
+		
+		JTextPane txtpnSrNo_1_2_1_2_1 = new JTextPane();
+		txtpnSrNo_1_2_1_2_1.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_2_1.setText("Gross Salary(Lei)");
+		txtpnSrNo_1_2_1_2_1.setOpaque(false);
+		txtpnSrNo_1_2_1_2_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_2_1.setEditable(false);
+		txtpnSrNo_1_2_1_2_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_2_1.setBounds(39, 413, 103, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_2_1);
+		
+		JTextPane txtpnPeopleForDeduction = new JTextPane();
+		txtpnPeopleForDeduction.setForeground(Color.BLACK);
+		txtpnPeopleForDeduction.setText("People for deduction\r\n*");
+		txtpnPeopleForDeduction.setOpaque(false);
+		txtpnPeopleForDeduction.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnPeopleForDeduction.setEditable(false);
+		txtpnPeopleForDeduction.setCaretColor(Color.CYAN);
+		txtpnPeopleForDeduction.setBounds(364, 224, 132, 20);
+		generatePanel.add(txtpnPeopleForDeduction);
+		
 
+		
+		JTextPane txtpnPersonalDeduction = new JTextPane();
+		txtpnPersonalDeduction.setForeground(Color.BLACK);
+		txtpnPersonalDeduction.setText("Personal Deduction");
+		txtpnPersonalDeduction.setOpaque(false);
+		txtpnPersonalDeduction.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnPersonalDeduction.setEditable(false);
+		txtpnPersonalDeduction.setCaretColor(Color.CYAN);
+		txtpnPersonalDeduction.setBounds(368, 283, 172, 20);
+		generatePanel.add(txtpnPersonalDeduction);
+
+		
+		JTextPane txtpnSrNo_1_2_1_3_2 = new JTextPane();
+		txtpnSrNo_1_2_1_3_2.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_3_2.setText("Net salary(Lei):\r\n");
+		txtpnSrNo_1_2_1_3_2.setOpaque(false);
+		txtpnSrNo_1_2_1_3_2.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_3_2.setEditable(false);
+		txtpnSrNo_1_2_1_3_2.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_3_2.setBounds(364, 473, 377, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_3_2);
+		
+		JTextPane txtpnWorkHours = new JTextPane();
+		txtpnWorkHours.setForeground(Color.BLACK);
+		txtpnWorkHours.setText("Overtime worked(enter hour)");
+		txtpnWorkHours.setOpaque(false);
+		txtpnWorkHours.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnWorkHours.setEditable(false);
+		txtpnWorkHours.setCaretColor(Color.CYAN);
+		txtpnWorkHours.setBounds(569, 283, 194, 20);
+		generatePanel.add(txtpnWorkHours);
+		
+		JTextPane txtpnTotalMoneyFor = new JTextPane();
+		txtpnTotalMoneyFor.setForeground(Color.BLACK);
+		txtpnTotalMoneyFor.setText("Total money for overtime");
+		txtpnTotalMoneyFor.setOpaque(false);
+		txtpnTotalMoneyFor.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnTotalMoneyFor.setEditable(false);
+		txtpnTotalMoneyFor.setCaretColor(Color.CYAN);
+		txtpnTotalMoneyFor.setBounds(569, 349, 172, 20);
+		generatePanel.add(txtpnTotalMoneyFor);
+		
+		
+		JTextPane txtpnIncomeTax = new JTextPane();
+		txtpnIncomeTax.setForeground(Color.BLACK);
+		txtpnIncomeTax.setText("Income tax(10%)");
+		txtpnIncomeTax.setOpaque(false);
+		txtpnIncomeTax.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnIncomeTax.setEditable(false);
+		txtpnIncomeTax.setCaretColor(Color.CYAN);
+		txtpnIncomeTax.setBounds(569, 413, 172, 20);
+		generatePanel.add(txtpnIncomeTax);
+		
+		JTextPane txtpnSrNo_1_2_1_3 = new JTextPane();
+		txtpnSrNo_1_2_1_3.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_3.setText("Overtime(Lei)*:\r\n");
+		txtpnSrNo_1_2_1_3.setOpaque(false);
+		txtpnSrNo_1_2_1_3.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_3.setEditable(false);
+		txtpnSrNo_1_2_1_3.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_3.setBounds(569, 224, 172, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_3);
+		
+		JTextPane txtpnSrNo_1_2_1_3_1 = new JTextPane();
+		txtpnSrNo_1_2_1_3_1.setForeground(Color.BLACK);
+		txtpnSrNo_1_2_1_3_1.setText("Social Insurance(25%)\r\n");
+		txtpnSrNo_1_2_1_3_1.setOpaque(false);
+		txtpnSrNo_1_2_1_3_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_2_1_3_1.setEditable(false);
+		txtpnSrNo_1_2_1_3_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_2_1_3_1.setBounds(364, 413, 172, 20);
+		generatePanel.add(txtpnSrNo_1_2_1_3_1);
+		
+		JTextPane healthInsuranceTxt = new JTextPane();
+		healthInsuranceTxt.setForeground(Color.BLACK);
+		healthInsuranceTxt.setText("Health Insurance(10%)");
+		healthInsuranceTxt.setOpaque(false);
+		healthInsuranceTxt.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		healthInsuranceTxt.setEditable(false);
+		healthInsuranceTxt.setCaretColor(Color.CYAN);
+		healthInsuranceTxt.setBounds(364, 349, 172, 20);
+		generatePanel.add(healthInsuranceTxt);
+		
+		
+	}
+	private void init_text_delete_panel(GradientPanel deletePanel)
+	{
+		JTextPane txtpnSrNo_1_1 = new JTextPane();
+		txtpnSrNo_1_1.setForeground(Color.BLACK);
+		txtpnSrNo_1_1.setText("Sr No:\r\n");
+		txtpnSrNo_1_1.setOpaque(false);
+		txtpnSrNo_1_1.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
+		txtpnSrNo_1_1.setEditable(false);
+		txtpnSrNo_1_1.setCaretColor(Color.CYAN);
+		txtpnSrNo_1_1.setBounds(138, 129, 67, 20);
+		deletePanel.add(txtpnSrNo_1_1);
+		
+		JTextPane txtpnFirstName_1_1 = new JTextPane();
+		txtpnFirstName_1_1.setForeground(Color.BLACK);
+		txtpnFirstName_1_1.setText("First Name");
+		txtpnFirstName_1_1.setOpaque(false);
+		txtpnFirstName_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnFirstName_1_1.setEditable(false);
+		txtpnFirstName_1_1.setBounds(138, 199, 67, 20);
+		deletePanel.add(txtpnFirstName_1_1);
+		
+		JTextPane txtpnLastName_1_1 = new JTextPane();
+		txtpnLastName_1_1.setForeground(Color.BLACK);
+		txtpnLastName_1_1.setText("Last Name");
+		txtpnLastName_1_1.setOpaque(false);
+		txtpnLastName_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnLastName_1_1.setEditable(false);
+		txtpnLastName_1_1.setBounds(420, 199, 67, 20);
+		deletePanel.add(txtpnLastName_1_1);
+		
+		JTextPane txtpnDepartament_1_1 = new JTextPane();
+		txtpnDepartament_1_1.setForeground(Color.BLACK);
+		txtpnDepartament_1_1.setText("Departament");
+		txtpnDepartament_1_1.setOpaque(false);
+		txtpnDepartament_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDepartament_1_1.setEditable(false);
+		txtpnDepartament_1_1.setBounds(138, 271, 78, 20);
+		deletePanel.add(txtpnDepartament_1_1);
+		
+		JTextPane txtpnDesignation_1_1 = new JTextPane();
+		txtpnDesignation_1_1.setForeground(Color.BLACK);
+		txtpnDesignation_1_1.setText("Designation");
+		txtpnDesignation_1_1.setOpaque(false);
+		txtpnDesignation_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnDesignation_1_1.setEditable(false);
+		txtpnDesignation_1_1.setBounds(420, 271, 78, 20);
+		deletePanel.add(txtpnDesignation_1_1);
+		
+		JTextPane txtpnContactNumber_1_1 = new JTextPane();
+		txtpnContactNumber_1_1.setForeground(Color.BLACK);
+		txtpnContactNumber_1_1.setText("Contact number");
+		txtpnContactNumber_1_1.setOpaque(false);
+		txtpnContactNumber_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnContactNumber_1_1.setEditable(false);
+		txtpnContactNumber_1_1.setBounds(138, 345, 94, 20);
+		deletePanel.add(txtpnContactNumber_1_1);
+		
+		JTextPane txtpnAddress_1_1 = new JTextPane();
+		txtpnAddress_1_1.setForeground(Color.BLACK);
+		txtpnAddress_1_1.setText("Address");
+		txtpnAddress_1_1.setOpaque(false);
+		txtpnAddress_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 11));
+		txtpnAddress_1_1.setEditable(false);
+		txtpnAddress_1_1.setBounds(138, 411, 67, 20);
+		deletePanel.add(txtpnAddress_1_1);
+		
+		JTextPane txtpnAddEmployeeMenu_1_1 = new JTextPane();
+		txtpnAddEmployeeMenu_1_1.setForeground(Color.BLACK);
+		txtpnAddEmployeeMenu_1_1.setText("DELETE EMPLOYEE\r\n");
+		txtpnAddEmployeeMenu_1_1.setOpaque(false);
+		txtpnAddEmployeeMenu_1_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
+		txtpnAddEmployeeMenu_1_1.setEditable(false);
+		txtpnAddEmployeeMenu_1_1.setDisabledTextColor(Color.BLACK);
+		txtpnAddEmployeeMenu_1_1.setBounds(324, 38, 214, 44);
+		deletePanel.add(txtpnAddEmployeeMenu_1_1);
+	}
+	
 	private void setVisiblePanel(GradientPanel visiblePanel,GradientPanel invisiblePanel1,GradientPanel invisiblePanel2,GradientPanel invisiblePanel3,GradientPanel invisiblePanel4)
 	{
 		visiblePanel.setVisible(true);

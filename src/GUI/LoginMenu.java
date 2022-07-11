@@ -7,7 +7,7 @@ import java.awt.Color;
 import javax.swing.border.MatteBorder;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
+
 
 import java.awt.Font;
 
@@ -23,9 +23,9 @@ import java.awt.Insets;
 
 import javax.swing.border.SoftBevelBorder;
 
-import connection.MyConnection;
 
-import java.sql.*;
+import system.Login;
+
 
 import javax.swing.JTextPane;
 import javax.swing.JButton;
@@ -36,17 +36,14 @@ import java.awt.Cursor;
 import javax.swing.border.LineBorder;
 import javax.swing.JPasswordField;
 
-public class Login {
+public class LoginMenu {
 
 	private JFrame frame;
 	private JTextField usernField;
 	private JPanel mainPanel = new JPanel();
 	private JPasswordField passField;
-	
+	private Login login;
 	private int mouseX, mouseY;
-	private Connection conn = null;
-	private ResultSet rs = null;
-	private PreparedStatement ps = null;
 	/**
 	 * Launch the application.
 	 */
@@ -54,7 +51,7 @@ public class Login {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login window = new Login();
+					LoginMenu window = new LoginMenu();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -66,9 +63,9 @@ public class Login {
 	/**
 	 * Create the application.
 	 */
-	public Login() {
+	public LoginMenu() {
+		login =  new Login();
 		initialize();
-		conn = MyConnection.getInstance().getConnection();
 	    textPane();
 		backgroundLogin();
 
@@ -89,7 +86,6 @@ public class Login {
 	    frame.setSize(600, 460);
 		frame.setLocationByPlatform(false);
 	    frame.setVisible(true);
-		//frame.getContentPane().setLayout(null);
 		
 	    
 	
@@ -160,6 +156,7 @@ public class Login {
 		
 		JLabel lblPassUser = new JLabel("Password ?");
 		lblPassUser.addMouseListener(new MouseAdapter() {
+			@SuppressWarnings("unused")
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				ForgotMenu forgot  = new ForgotMenu();
@@ -191,9 +188,8 @@ public class Login {
 		loginBttn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				 String uname =  usernField.getText();
-				 String pass =  String.valueOf(passField.getPassword());
-				 loginConnection( uname,  pass);
+				
+				 login.loginConnection( passField, usernField, frame );
 			
 			}
 		});
@@ -209,10 +205,7 @@ public class Login {
 		});
 		loginBttn.setBounds(178, 290, 196, 37);
 		mainPanel.add(loginBttn);
-		
-		
-		
-		
+				
 	}
 	public void textPane()
 	{
@@ -250,57 +243,6 @@ public class Login {
 		bkgLogin.setIcon(new ImageIcon("E:\\FACULTATE\\ProiectPractica\\icon\\login-whisp.png"));
 		bkgLogin.setBounds(23, 48, 537, 342);
 		mainPanel.add(bkgLogin);			
-	}
-	
-	public void loginConnection(String uname, String pass)
-	{
-		
-		if(uname.equalsIgnoreCase("")) { 
-			JOptionPane.showMessageDialog(null, "Username filed is empty");
-		} else if(pass.equals(""))
-		{
-			JOptionPane.showMessageDialog(null, "Password filed is empty");
-		} else
-		{
-			String query = "SELECT * FROM `user` WHERE `uname`=? AND `pass`=?";
-			String firstAndLastName;
-			String designation;
-			try {
-				ps = conn.prepareStatement(query);
-				ps.setString(1, uname);
-				ps.setString(2, pass);
-				
-				rs = ps.executeQuery();
-				if(rs.next())
-				{
-					
-					JOptionPane.showMessageDialog(null, "Login Succsessful !");
-					passField.setText("");
-					usernField.setText("");
-					
-					firstAndLastName =  rs.getString(3) + " " + rs.getString(4) ;
-					designation  =  rs.getString(5);
-					
-					MainMenu menu =  new MainMenu(firstAndLastName,designation);
-					frame.dispose();
-					
-				}
-				else
-				{
-					JOptionPane.showMessageDialog(null, "Login Failed");
-					passField.setText("");
-					usernField.setText("");
-					
-				}
-			} catch (SQLException ex) {
-				JOptionPane.showMessageDialog(null, ex);
-			}
-		}
-	}
-
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
-		
 	}
 
     
