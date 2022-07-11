@@ -95,7 +95,7 @@ public class SignUp extends JFrame {
 		double y = 25;
 		frame.setShape(new RoundRectangle2D.Double(x, y, 500, 360, x, y));
 	    frame.setSize(600, 460);
-		frame.setLocationByPlatform(false);
+	    frame.setLocationRelativeTo(null);
 	    frame.setVisible(true);
 		
 	

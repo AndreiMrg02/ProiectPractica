@@ -341,7 +341,10 @@ public class Salary {
 		String netSalary = netSalaryField.getText();
 		
 		int p = JOptionPane.showConfirmDialog(null, "Are you sure to update this record?", "Update Record", JOptionPane.YES_NO_OPTION);
-		
+		if(otT.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "Check information again!");
+		}else {
 		if(p == 0)
 		{
 			String sql = "UPDATE `salary_list` SET `srno`='"+srNo+"',`grossSalary`='"+gross+"',`deductionPeople`='"+people+"', `personalDeduction`='"+dp+"',`healthInsurance`='"+hi+"',`socialInsurance`='"+si+"',`overtime`='"+ot+"', `overtimeHour`='"+otH+"', `overtimeTotal`='"+otT+"', `incomeTax`='"+it+"',`netSalary`='"+netSalary+"' WHERE `srno`='"+srNo+"'";
@@ -355,6 +358,7 @@ public class Salary {
 				
 				JOptionPane.showMessageDialog(null, ex);
 			}
+		}
 		}
 	
 	}

@@ -55,7 +55,7 @@ public class Employee {
 			} else if(fname.equals(""))
 			{
 				JOptionPane.showMessageDialog(null, "ERROR: Last Name filed is empty");
-			} else if(fname.equals(""))
+			} else if(contact.equals(""))
 			{
 				JOptionPane.showMessageDialog(null, "ERROR: Number filed is empty");
 			}else if(address.equals(""))
@@ -110,7 +110,27 @@ public class Employee {
 		address = addressUpdateField.getText();
 		
 		int p = JOptionPane.showConfirmDialog(null, "Are you sure to update this record?", "Update Record", JOptionPane.YES_NO_OPTION);
-		
+		if(fname.equalsIgnoreCase("")) { 
+			JOptionPane.showMessageDialog(null, "ERROR: First Name filed is empty");
+		} else if(fname.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: Last Name filed is empty");
+		} else if(contact.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: Number filed is empty");
+		}else if(address.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: Address filed is empty");
+		}else if(departament.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: Departament filed is empty");
+		}else if(designation.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: Designation filed is empty");
+		}else if(srNo.equals(""))
+		{
+			JOptionPane.showMessageDialog(null, "ERROR: SrNo filed is empty");
+		} else {
 		if(p == 0)
 		{
 			String sql = "UPDATE `employee_list` SET `srno`='"+srNo+"',`fname`='"+fname+"',`lname`='"+lname+"',`departament`='"+departament+"',`designation`='"+designation+"',`number`='"+contact+"',`address`='"+address+"' WHERE `srno`='"+srNo+"'";
@@ -118,10 +138,19 @@ public class Employee {
 				ps = conn.prepareStatement(sql);
 				ps.execute();
 				JOptionPane.showMessageDialog(null, "Data updated succesfully!");
+				
+				srNoUpdateField.setText("");
+				fnUpdateField.setText("");
+				lnUpdateField.setText("");
+				departamentBoxUpdate.setText("");
+				designationBoxUpdate.setText("");
+				contactUpdateField.setText("");
+				addressUpdateField.setText("");
 			} catch (Exception ex) {
 				
 				JOptionPane.showMessageDialog(null, ex);
 			}
+		}
 		}
 	
 	}
@@ -146,6 +175,14 @@ public class Employee {
 	public void deleteEmployee(JTextField srNoDeleteField, JTextField fnDeleteField, JTextField lnDeleteField, JTextField departamentDeleteField, JTextField designationDeleteField, JTextField contactDeleteField, JTextField addressDeleteField )
 	{
 		int p = JOptionPane.showConfirmDialog(null, "Are you sure to delete this record?", "Delete Record", JOptionPane.YES_NO_OPTION);
+		String srNoVerify = srNoDeleteField.getText();
+		String fnameVerify = fnDeleteField.getText();
+		if(srNoVerify.equalsIgnoreCase("")) { 
+			JOptionPane.showMessageDialog(null, "ERROR: SrNo filed is empty");
+		}else if(fnameVerify.equalsIgnoreCase("")) {
+			JOptionPane.showMessageDialog(null, "ERROR: Check information again!");
+		}
+		else { 
 		try {
 		if(p == 0)
 		{
@@ -169,6 +206,7 @@ public class Employee {
 				
 				JOptionPane.showMessageDialog(null, ex);
 			}
+		}
 	}
 	public void selectDesignation(JComboBox<String> departament_b, JComboBox<String> designation_b)
 	{

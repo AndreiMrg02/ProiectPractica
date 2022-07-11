@@ -13,7 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.SystemColor;
-
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -33,6 +33,7 @@ import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Cursor;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
@@ -164,16 +165,19 @@ public class MainMenu extends JFrame {
 	    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setUndecorated(true);
 	    frame.setSize(1000, 650);
-		frame.setLocationByPlatform(false);
+	    frame.setLocationRelativeTo(null);
 	    frame.setVisible(true);
 		
+	    
+	    
+	    
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1116, 703);
 		contentPane = new JPanel();
 		contentPane.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
 		frame.getContentPane().add(contentPane);
 		contentPane.setLayout(null);
-		panelLeft.setBounds(0, 33, 222, 617);
+		panelLeft.setBounds(0, 0, 222, 650);
 
 		panelLeft.setBorder(null);
 		panelLeft.setBackground(new Color(0, 0, 51));
@@ -181,7 +185,7 @@ public class MainMenu extends JFrame {
 		panelLeft.setLayout(null);
 		
 		GradientPanel panels = new GradientPanel();
-		panels.setBounds(221, 33, 779, 617);
+		panels.setBounds(217, 0, 783, 650);
 		contentPane.add(panels);
 		panels.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, null, null));
 		panels.setBackground(Color.BLACK);
@@ -189,9 +193,11 @@ public class MainMenu extends JFrame {
 		
 		GradientPanel addPanel = new GradientPanel();
 		addPanel.setLayout(null);
-		addPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		addPanel.setBorder(null);
 		addPanel.setBackground(Color.BLACK);
 		panels.add(addPanel, "name_21359803485800");
+		
+		header(addPanel);
 		
 		srNoField = new JTextField();
 		srNoField.setFont(new Font("Segoe UI Black", Font.BOLD, 11));
@@ -296,7 +302,7 @@ public class MainMenu extends JFrame {
 		addBttnPanel.setColor1(Color.GRAY);
 		addBttnPanel.setBorder(null);
 		addBttnPanel.setBackground(SystemColor.menu);
-		addBttnPanel.setBounds(294, 530, 204, 55);
+		addBttnPanel.setBounds(294, 559, 204, 55);
 		addPanel.add(addBttnPanel);
 		
 		
@@ -307,10 +313,10 @@ public class MainMenu extends JFrame {
 		
 		GradientPanel updatePanel = new GradientPanel();
 		updatePanel.setLayout(null);
-		updatePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		updatePanel.setBorder(null);
 		updatePanel.setBackground(Color.BLACK);
 		panels.add(updatePanel, "name_21373459515600");
-		
+		header(updatePanel);
 		/////////////////////////////////////
 		init_text_update_panel( updatePanel);
 		/////////////////////////////////////
@@ -367,7 +373,7 @@ public class MainMenu extends JFrame {
 		bttnUpdateEmployee.setColor1(Color.GRAY);
 		bttnUpdateEmployee.setBorder(null);
 		bttnUpdateEmployee.setBackground(SystemColor.menu);
-		bttnUpdateEmployee.setBounds(294, 487, 204, 55);
+		bttnUpdateEmployee.setBounds(294, 540, 204, 55);
 		updatePanel.add(bttnUpdateEmployee);
 		
 		srNoUpdateField = new JTextField();
@@ -461,17 +467,17 @@ public class MainMenu extends JFrame {
 		
 		GradientPanel generatePanel = new GradientPanel();
 		generatePanel.setBackground(Color.BLACK);
-		generatePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		generatePanel.setBorder(null);
 		generatePanel.setLayout(null);
 		panels.add(generatePanel, "name_21390220791400");
-		
+		header(generatePanel);
 
 		GradientPanel updateSalaryPanel = new GradientPanel();
 		updateSalaryPanel.setBackground(Color.BLACK);
-		updateSalaryPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		updateSalaryPanel.setBorder(null);
 		updateSalaryPanel.setLayout(null);
 		panels.add(updateSalaryPanel, "name_15035986967600");
-		
+		header(updateSalaryPanel);
 		
 		init_text_generate_panel( generatePanel);
 		fnGenerateSalaryField = new JTextField();
@@ -662,30 +668,9 @@ public class MainMenu extends JFrame {
 		
 		GradientPanel deletePanel = new GradientPanel();
 		deletePanel.setLayout(null);
-		deletePanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		deletePanel.setBorder(null);
 		deletePanel.setBackground(Color.BLACK);
 		panels.add(deletePanel, "name_271489301300");
-		
-		JPanel panelHeader = new JPanel();
-		panelHeader.setOpaque(true);
-		panelHeader.setBackground(new Color(25, 25, 112));
-		panelHeader.setForeground(Color.WHITE);
-		panelHeader.setBorder(null);
-		panelHeader.setBounds(0, 0, 1000, 34);
-		contentPane.add(panelHeader);
-		
-		JLabel x_Bttn = new JLabel("");
-		x_Bttn.setBounds(964, 0, 36, 37);
-		panelHeader.add(x_Bttn);
-		x_Bttn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-			}
-		});
-		x_Bttn.setIcon(new ImageIcon("E:\\FACULTATE\\ProiectPractica\\icon\\icons8-close-32.png"));
-		x_Bttn.setVisible(true);
-		move_windows( panelHeader);
 		
 
 		ButtonGradient bttnAdd =  new ButtonGradient();
@@ -927,7 +912,7 @@ public class MainMenu extends JFrame {
 		bttnDeleteEmployee_1.setColor1(Color.GRAY);
 		bttnDeleteEmployee_1.setBorder(null);
 		bttnDeleteEmployee_1.setBackground(SystemColor.menu);
-		bttnDeleteEmployee_1.setBounds(294, 487, 204, 55);
+		bttnDeleteEmployee_1.setBounds(312, 534, 204, 55);
 		deletePanel.add(bttnDeleteEmployee_1);
 		
 		
@@ -999,6 +984,8 @@ public class MainMenu extends JFrame {
 		designationDeleteField.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
 		designationDeleteField.setBounds(430, 292, 251, 30);
 		deletePanel.add(designationDeleteField);
+		header(deletePanel);
+	
 		
 		
 		srNoDeleteField.addFocusListener(new FocusAdapter() {
@@ -1924,7 +1911,27 @@ public class MainMenu extends JFrame {
 		invisiblePanel3.setVisible(false);
 		invisiblePanel4.setVisible(false);
 	}
-	
+	private void header(GradientPanel destinatie)
+	{
+		JPanel panel = new JPanel();
+		panel.setOpaque(false);
+		panel.setBounds(-220, 0, 997, 27);
+		destinatie.add(panel);
+		panel.setLayout(null);
+		
+		move_windows(panel); 
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(972, 0, 25, 25);
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+			}
+		});
+		lblNewLabel_1.setIcon(new ImageIcon("E:\\FACULTATE\\ProiectPractica\\icon\\x-icon-png-17.png"));
+		panel.add(lblNewLabel_1);
+	}
 	private void move_windows(JPanel panelHeader) {
 		panelHeader.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
@@ -1939,8 +1946,6 @@ public class MainMenu extends JFrame {
 				mouseY = e.getY();
 			}
 		});
-		
-		panelHeader.setLayout(null);
 	}
 }
 
