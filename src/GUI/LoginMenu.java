@@ -23,7 +23,7 @@ import java.awt.Insets;
 
 import javax.swing.border.SoftBevelBorder;
 
-
+import resources.GradientPanel;
 import system.Login;
 
 
@@ -128,7 +128,7 @@ public class LoginMenu {
 			}
 		});
 		
-		headerMainPanel.setBackground(SystemColor.activeCaption);
+		headerMainPanel.setBackground(new Color(169, 169, 169));
 		headerMainPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		headerMainPanel.setBounds(23, 11, 506, 46);
 		mainPanel.add(headerMainPanel);
@@ -207,6 +207,7 @@ public class LoginMenu {
 		mainPanel.add(loginBttn);
 				
 	}
+	
 	public void textPane()
 	{
 		JTextPane txtUsername_1 = new JTextPane();

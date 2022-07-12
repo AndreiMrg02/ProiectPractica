@@ -147,7 +147,7 @@ public class ForgotMenu extends JFrame {
 				if(e.getKeyCode() == KeyEvent.VK_ENTER)
 				{
 					try {
-					String sql = "SELECT * FROM `user` WHERE `uname` = ?";
+					String sql = "SELECT * FROM `user` WHERE `uname` =?";
 					ps = conn.prepareStatement(sql);
 					ps.setString(1, userField.getText());
 					
@@ -358,12 +358,6 @@ public class ForgotMenu extends JFrame {
 		bkgLogin.setIcon(new ImageIcon("E:\\FACULTATE\\ProiectPractica\\icon\\login-whisp.png"));
 		bkgLogin.setBounds(23, 58, 537, 341);
 		mainPanel.add(bkgLogin);	
-		
-		
-		
-		
-		
-
 		
 	
 		

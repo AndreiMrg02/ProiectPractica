@@ -4,6 +4,14 @@
   <artifactId>ProiectMurguAndreiMarian</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 <dependencies> 
+
+<!-- https://mvnrepository.com/artifact/send-mail/send-mail -->
+<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 <dependency>
     <groupId>mysql</groupId>
