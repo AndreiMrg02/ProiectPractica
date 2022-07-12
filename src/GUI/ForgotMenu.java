@@ -25,6 +25,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
 import connection.MyConnection;
+import resources.ButtonGradient;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -55,7 +56,7 @@ public class ForgotMenu extends JFrame {
 	private JTextField txtSecurityQuestion;
 	private JTextField txtAnswer;
 	private JTextField txtPassword;
-	private JButton bttnBack;
+	private ButtonGradient bttnBack;
 	
 	private Connection conn = null;
 	private ResultSet rs = null;
@@ -110,7 +111,7 @@ public class ForgotMenu extends JFrame {
 		
 		
 		JPanel headerMainPanel = new JPanel();
-		headerMainPanel.setBackground(SystemColor.activeCaption);
+		headerMainPanel.setBackground(new Color(169, 169, 169));
 		headerMainPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK));
 		headerMainPanel.setBounds(23, 11, 503, 48);
 		mainPanel.add(headerMainPanel);
@@ -290,7 +291,10 @@ public class ForgotMenu extends JFrame {
 		txtPassword.setBounds(185, 287, 86, 20);
 		mainPanel.add(txtPassword);
 		
-		JButton bttnRecovery = new JButton("Recovery");
+		ButtonGradient bttnRecovery = new ButtonGradient();
+		bttnRecovery.setColor2(new Color(128, 128, 128));
+		bttnRecovery.setColor1(new Color(112, 128, 144));
+		bttnRecovery.setText("Recovery");
 		bttnRecovery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -325,15 +329,18 @@ public class ForgotMenu extends JFrame {
 			}
 		});
 		bttnRecovery.setBackground(Color.WHITE);
-		bttnRecovery.setForeground(SystemColor.textHighlight);
-		bttnRecovery.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
+		bttnRecovery.setForeground(new Color(0, 0, 0));
+		bttnRecovery.setBorder(null);
 		bttnRecovery.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		bttnRecovery.setBounds(103, 342, 130, 34);
 		mainPanel.add(bttnRecovery);
 		
-		bttnBack = new JButton("Back");
+		bttnBack = new ButtonGradient();
+		bttnBack.setColor2(new Color(128, 128, 128));
+		bttnBack.setColor1(new Color(112, 128, 144));
+		bttnBack.setText("BACK");
 		bttnBack.setBackground(Color.WHITE);
-		bttnBack.setForeground(SystemColor.textHighlight);
+		bttnBack.setForeground(new Color(0, 0, 0));
 		bttnBack.addMouseListener(new MouseAdapter() {
 			@SuppressWarnings("unused")
 			@Override
@@ -342,7 +349,7 @@ public class ForgotMenu extends JFrame {
 				frame.dispose();
 			}
 		});
-		bttnBack.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, null, null, null));
+		bttnBack.setBorder(null);
 		bttnBack.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		bttnBack.setBounds(307, 342, 130, 34);
 		mainPanel.add(bttnBack);

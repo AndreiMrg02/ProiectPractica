@@ -25,7 +25,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.border.SoftBevelBorder;
 
 import connection.MyConnection;
-
+import resources.ButtonGradient;
 
 import javax.swing.border.BevelBorder;
 import javax.swing.JTextField;
@@ -106,7 +106,7 @@ public class SignUp extends JFrame {
 		mainPanel.setLayout(null);
 		
 		JPanel headerMainPanel = new JPanel();
-		headerMainPanel.setBackground(SystemColor.activeCaption);
+		headerMainPanel.setBackground(new Color(169, 169, 169));
 		headerMainPanel.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, Color.BLACK, Color.BLACK, Color.BLACK, Color.BLACK));
 		headerMainPanel.setBounds(23, 11, 503, 48);
 		mainPanel.add(headerMainPanel);
@@ -216,8 +216,11 @@ public class SignUp extends JFrame {
 		mainPanel.add(questionField);
 		
 		
-		JButton signupBttn = new JButton("Sign Up");
-		signupBttn.setForeground(SystemColor.textHighlight);
+		ButtonGradient signupBttn = new ButtonGradient();
+		signupBttn.setColor2(new Color(112, 128, 144));
+		signupBttn.setColor1(new Color(128, 128, 128));
+		signupBttn.setText("SIGN UP\r\n");
+		signupBttn.setForeground(new Color(0, 0, 0));
 		signupBttn.addMouseListener(new MouseAdapter() {
 			@SuppressWarnings("unused")
 			@Override
@@ -301,13 +304,16 @@ public class SignUp extends JFrame {
 			
 			}
 		});
-		signupBttn.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		signupBttn.setBorder(null);
 		signupBttn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		signupBttn.setBounds(186, 289, 153, 38);
 		mainPanel.add(signupBttn);
 		
-		JButton backBttn = new JButton("Back");
-		backBttn.setForeground(SystemColor.textHighlight);
+		ButtonGradient backBttn = new ButtonGradient();
+		backBttn.setColor2(new Color(128, 128, 128));
+		backBttn.setColor1(new Color(112, 128, 144));
+		backBttn.setText("BACK");
+		backBttn.setForeground(new Color(0, 0, 0));
 		backBttn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -317,7 +323,7 @@ public class SignUp extends JFrame {
 				LoginMenu login =  new LoginMenu();
 			}
 		});
-		backBttn.setBorder(new SoftBevelBorder(BevelBorder.LOWERED, null, null, null, null));
+		backBttn.setBorder(null);
 		backBttn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		backBttn.setBounds(210, 338, 111, 38);
 		mainPanel.add(backBttn);

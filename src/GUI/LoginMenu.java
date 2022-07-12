@@ -23,6 +23,7 @@ import java.awt.Insets;
 
 import javax.swing.border.SoftBevelBorder;
 
+import resources.ButtonGradient;
 import resources.GradientPanel;
 import system.Login;
 
@@ -181,10 +182,13 @@ public class LoginMenu {
 		});
 		lblSignUp.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		lblSignUp.setForeground(SystemColor.textHighlight);
-		lblSignUp.setBounds(220, 357, 77, 20);
+		lblSignUp.setBounds(254, 356, 77, 20);
 		mainPanel.add(lblSignUp);
 		
-		JButton loginBttn = new JButton("LOGIN");
+		ButtonGradient loginBttn = new ButtonGradient();
+		loginBttn.setColor2(new Color(128, 128, 128));
+		loginBttn.setColor1(new Color(105, 105, 105));
+		loginBttn.setText("LOGIN\r\n");
 		loginBttn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -195,9 +199,9 @@ public class LoginMenu {
 		});
 		loginBttn.setFont(new Font("Cooper Black", Font.PLAIN, 11));
 		loginBttn.setBackground(SystemColor.controlShadow);
-		loginBttn.setForeground(new Color(0, 0, 255));
+		loginBttn.setForeground(new Color(0, 0, 0));
 		loginBttn.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-		loginBttn.setBorder(new SoftBevelBorder(BevelBorder.RAISED, null, null, null, null));
+		loginBttn.setBorder(null);
 		loginBttn.setAlignmentX(Component.RIGHT_ALIGNMENT);
 		loginBttn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -231,7 +235,7 @@ public class LoginMenu {
 		JTextPane txtDontHaveAccount = new JTextPane();
 		txtDontHaveAccount.setText("Don't have an account? ");
 		txtDontHaveAccount.setOpaque(false);
-		txtDontHaveAccount.setBounds(188, 338, 196, 20);
+		txtDontHaveAccount.setBounds(215, 338, 196, 20);
 		mainPanel.add(txtDontHaveAccount);
 		
 		
