@@ -3,7 +3,6 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -27,7 +26,6 @@ import javax.swing.border.SoftBevelBorder;
 import connection.MyConnection;
 import resources.ButtonGradient;
 
-import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
@@ -62,25 +60,6 @@ public class ForgotMenu extends JFrame {
 	private ResultSet rs = null;
 	private PreparedStatement ps = null;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					ForgotMenu frame = new ForgotMenu();
-					frame.setVisible(false);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public ForgotMenu() {
 		
 		initializare();

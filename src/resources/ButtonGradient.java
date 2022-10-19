@@ -176,4 +176,10 @@ public class ButtonGradient extends JButton {
         float y = pressedLocation.y - (pressedSize / 2);
         g2.fillOval((int) x, (int) y, (int) pressedSize, (int) pressedSize);
     }
+
+    public void setColor1(javafx.scene.paint.Color gray) {
+    }
+
+    public void setForeground(javafx.scene.paint.Color white) {
+    }
 }

@@ -2,6 +2,8 @@ package connection;
 
 import java.sql.*;
 
+import javax.swing.JOptionPane;
+
 
 public class MyConnection {
 	private static MyConnection instance = null;
@@ -24,6 +26,7 @@ public class MyConnection {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost/dbEmployee_test","root","");
 		} catch (Exception ex) {
+			JOptionPane.showMessageDialog(null, "Database is not connected !");
 			System.out.println(ex.getMessage());
 		}
 		return con;

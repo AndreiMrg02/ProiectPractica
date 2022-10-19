@@ -3,7 +3,6 @@ package GUI;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.EventQueue;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -34,7 +33,6 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTextPane;
 import java.awt.Font;
 import javax.swing.JPasswordField;
-import javax.swing.JButton;
 
 public class SignUp extends JFrame {
 
@@ -64,19 +62,6 @@ public class SignUp extends JFrame {
 
 	
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					@SuppressWarnings("unused")
-					SignUp frame = new SignUp();
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 	public SignUp() {
 	
 	     initialize();

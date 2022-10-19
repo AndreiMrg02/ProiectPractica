@@ -24,12 +24,10 @@ import java.awt.Insets;
 import javax.swing.border.SoftBevelBorder;
 
 import resources.ButtonGradient;
-import resources.GradientPanel;
 import system.Login;
 
 
 import javax.swing.JTextPane;
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Component;
@@ -40,31 +38,35 @@ import javax.swing.JPasswordField;
 public class LoginMenu {
 
 	private JFrame frame;
+	public JFrame getFrame() {
+		return frame;
+	}
+
+	public void setFrame(JFrame frame) {
+		this.frame = frame;
+	}
+
 	private JTextField usernField;
 	private JPanel mainPanel = new JPanel();
 	private JPasswordField passField;
 	private Login login;
 	private int mouseX, mouseY;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
+	
+	
+	public static void run_Application() {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginMenu window = new LoginMenu();
-					window.frame.setVisible(true);
+					LoginMenu window =  new LoginMenu();
+					window.getFrame().setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-
-	/**
-	 * Create the application.
-	 */
-	public LoginMenu() {
+	
+	 public LoginMenu() {
 		login =  new Login();
 		initialize();
 	    textPane();
@@ -72,9 +74,7 @@ public class LoginMenu {
 
 	}
 
-	/**
-	 * Initialize the contents of the frame.
-	 */
+    
 	private void initialize() {
 
 		frame =  new JFrame();
